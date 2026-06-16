@@ -67,26 +67,6 @@ img { display: block; max-width: 100%; }
 }
 .topbar-auth:hover { color: var(--royal-blue); }
 
-.topbar-divider {
-    width: 1px;
-    height: 16px;
-    background: var(--light-gray);
-}
-
-.sponsor-logos {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.sponsor-pill {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--dark);
-    cursor: pointer;
-    transition: opacity 0.2s;
-}
-.sponsor-pill:hover { opacity: 0.7; }
 
 /* ── MAIN NAVBAR ──────────────────────────────────────── */
 .navbar {
@@ -836,30 +816,6 @@ img { display: block; max-width: 100%; }
 .shop-body h4 { font-size: 0.88rem; font-weight: 800; color: var(--dark); margin-bottom: 0.4rem; }
 .shop-price { font-size: 1rem; font-weight: 900; color: var(--royal-blue); }
 
-/* ── SPONSORS BAR ─────────────────────────────────────── */
-.sponsors-bar { padding: 30px 0; }
-.sponsors-label {
-    text-align: center;
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 1.2rem;
-}
-.sponsors-list {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    flex-wrap: wrap;
-}
-.sp-logo {
-    color: rgba(255,255,255,0.7);
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: opacity 0.2s;
-}
-.sp-logo:hover { opacity: 0.5; }
 
 /* ── BUTTONS ──────────────────────────────────────────── */
 .btn-blue {
