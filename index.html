@@ -8,12 +8,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <span><i class="fas fa-phone"></i> +1 (555) 123-4567</span>
+                <span><i class="fas fa-envelope"></i> info@almailfc.com</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="navbar-brand">
                 <a href="#home" class="logo">
-                    <i class="fas fa-futbol"></i> ALMAIL FC
+                    <div class="club-crest">AFC</div>
+                    <span>ALMAIL FC</span>
                 </a>
             </div>
             <button class="menu-toggle" id="menuToggle">
@@ -22,308 +39,387 @@
                 <span></span>
             </button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="#fixtures">Fixtures</a></li>
+                <li class="dropdown">
+                    <a href="#club">Club</a>
+                    <div class="dropdown-menu">
+                        <a href="#about">About Us</a>
+                        <a href="#">History</a>
+                        <a href="#">Stadium</a>
+                        <a href="#">Management</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#team">Team</a>
+                    <div class="dropdown-menu">
+                        <a href="#team">First Team</a>
+                        <a href="#">Squad List</a>
+                        <a href="#">Academy</a>
+                        <a href="#">Women's Team</a>
+                    </div>
+                </li>
+                <li><a href="#fixtures">Fixtures & Results</a></li>
                 <li><a href="#news">News</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#shop">Shop</a>
+                    <div class="dropdown-menu">
+                        <a href="#">Kits & Jerseys</a>
+                        <a href="#">Merchandise</a>
+                        <a href="#">Accessories</a>
+                    </div>
+                </li>
+                <li><a href="#tickets" class="btn-tickets">Tickets</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Video Background -->
     <header id="home" class="hero">
+        <div class="hero-video-container">
+            <video autoplay muted loop class="hero-video">
+                <source src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc2MtMzUwYQMCAOWGVXYAIf///" type="video/mp4">
+            </video>
+            <div class="hero-overlay-dark"></div>
+        </div>
         <div class="hero-content">
+            <div class="hero-badge">WELCOME TO</div>
             <h1>ALMAIL FOOTBALL CLUB</h1>
-            <p>Excellence in Every Match</p>
+            <p>Where Excellence Meets Passion</p>
             <div class="hero-buttons">
-                <a href="#team" class="btn btn-primary">Meet Our Team</a>
-                <a href="#contact" class="btn btn-secondary">Get Involved</a>
+                <a href="#tickets" class="btn btn-primary">Get Tickets</a>
+                <a href="#" class="btn btn-secondary">Watch Live</a>
             </div>
         </div>
-        <div class="hero-overlay"></div>
     </header>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- Quick Stats Bar -->
+    <section class="stats-bar">
         <div class="container">
-            <div class="section-title">
-                <h2>About Almail FC</h2>
-                <div class="title-underline"></div>
+            <div class="stat-item">
+                <h3>50+</h3>
+                <p>Years Strong</p>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Our Mission</h3>
-                    <p>Almail Football Club is dedicated to fostering excellence, teamwork, and passion for the beautiful game. We believe in developing world-class athletes while maintaining strong community values and sporting integrity.</p>
-                    <h3>Our Vision</h3>
-                    <p>To be recognized as one of the most professional and respected football clubs, setting standards of excellence both on and off the pitch. We aim to inspire the next generation of footballing talent and create lasting memories for our supporters.</p>
-                    <ul class="club-values">
-                        <li><strong>Integrity:</strong> Playing with honor and respect</li>
-                        <li><strong>Excellence:</strong> Striving for perfection in all we do</li>
-                        <li><strong>Community:</strong> Building connections with our supporters</li>
-                        <li><strong>Passion:</strong> Bringing dedication to every match</li>
-                    </ul>
-                </div>
-                <div class="about-stats">
-                    <div class="stat-card">
-                        <h4>50+</h4>
-                        <p>Years of History</p>
-                    </div>
-                    <div class="stat-card">
-                        <h4>25K+</h4>
-                        <p>Loyal Supporters</p>
-                    </div>
-                    <div class="stat-card">
-                        <h4>100+</h4>
-                        <p>Trophies Won</p>
-                    </div>
-                    <div class="stat-card">
-                        <h4>30+</h4>
-                        <p>Professional Players</p>
-                    </div>
-                </div>
+            <div class="stat-item">
+                <h3>100+</h3>
+                <p>Trophies</p>
+            </div>
+            <div class="stat-item">
+                <h3>25K+</h3>
+                <p>Supporters</p>
+            </div>
+            <div class="stat-item">
+                <h3>30+</h3>
+                <p>Players</p>
             </div>
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section id="team" class="team">
+    <!-- Featured Match Section -->
+    <section class="featured-match">
         <div class="container">
-            <div class="section-title">
-                <h2>Our Squad</h2>
-                <div class="title-underline"></div>
-            </div>
-            <div class="team-grid">
-                <div class="player-card">
-                    <div class="player-image player-1"></div>
-                    <div class="player-info">
-                        <h3>Captain Leadership</h3>
-                        <p class="position">Defender</p>
-                        <p class="number">#1</p>
-                        <div class="player-stats">
-                            <span>50 Matches</span> • <span>5 Goals</span>
-                        </div>
+            <h2>Next Match</h2>
+            <div class="match-card">
+                <div class="match-date">
+                    <span class="day">22</span>
+                    <span class="month">JUN 2026</span>
+                    <span class="time">3:00 PM</span>
+                </div>
+                <div class="match-teams">
+                    <div class="team-section">
+                        <div class="team-badge">A</div>
+                        <h3>ALMAIL FC</h3>
+                        <p>Home</p>
+                    </div>
+                    <div class="vs-divider">VS</div>
+                    <div class="team-section">
+                        <div class="team-badge alt">U</div>
+                        <h3>UNITED FC</h3>
+                        <p>Away</p>
                     </div>
                 </div>
-                <div class="player-card">
-                    <div class="player-image player-2"></div>
-                    <div class="player-info">
+                <a href="#tickets" class="btn btn-primary">Book Tickets</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Players -->
+    <section class="featured-players">
+        <div class="container">
+            <h2>Featured Players</h2>
+            <div class="featured-grid">
+                <div class="featured-player">
+                    <div class="player-photo player-1"></div>
+                    <div class="player-details">
                         <h3>Striker Elite</h3>
                         <p class="position">Forward</p>
                         <p class="number">#9</p>
-                        <div class="player-stats">
-                            <span>45 Matches</span> • <span>28 Goals</span>
-                        </div>
+                        <p class="stats">28 Goals • 12 Assists</p>
+                        <a href="#" class="view-profile">View Profile →</a>
                     </div>
                 </div>
-                <div class="player-card">
-                    <div class="player-image player-3"></div>
-                    <div class="player-info">
+                <div class="featured-player">
+                    <div class="player-photo player-2"></div>
+                    <div class="player-details">
                         <h3>Midfield Master</h3>
                         <p class="position">Midfielder</p>
                         <p class="number">#7</p>
-                        <div class="player-stats">
-                            <span>52 Matches</span> • <span>12 Goals</span>
-                        </div>
+                        <p class="stats">12 Goals • 15 Assists</p>
+                        <a href="#" class="view-profile">View Profile →</a>
                     </div>
                 </div>
-                <div class="player-card">
-                    <div class="player-image player-4"></div>
-                    <div class="player-info">
-                        <h3>Goalkeeper Pro</h3>
-                        <p class="position">Goalkeeper</p>
-                        <p class="number">#23</p>
-                        <div class="player-stats">
-                            <span>48 Matches</span> • <span>12 Clean Sheets</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="player-card">
-                    <div class="player-image player-5"></div>
-                    <div class="player-info">
-                        <h3>Defender Strong</h3>
+                <div class="featured-player">
+                    <div class="player-photo player-3"></div>
+                    <div class="player-details">
+                        <h3>Captain Leadership</h3>
                         <p class="position">Defender</p>
-                        <p class="number">#4</p>
-                        <div class="player-stats">
-                            <span>48 Matches</span> • <span>3 Goals</span>
-                        </div>
+                        <p class="number">#1</p>
+                        <p class="stats">50 Matches • Captain</p>
+                        <a href="#" class="view-profile">View Profile →</a>
                     </div>
                 </div>
-                <div class="player-card">
-                    <div class="player-image player-6"></div>
-                    <div class="player-info">
-                        <h3>Winger Swift</h3>
-                        <p class="position">Winger</p>
-                        <p class="number">#11</p>
-                        <div class="player-stats">
-                            <span>46 Matches</span> • <span>18 Goals</span>
+            </div>
+            <div class="view-all">
+                <a href="#team" class="btn btn-outline">View Full Squad</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Fixtures & Results -->
+    <section id="fixtures" class="fixtures-section">
+        <div class="container">
+            <div class="fixtures-header">
+                <h2>Fixtures & Results</h2>
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="upcoming">Upcoming</button>
+                    <button class="tab-btn" data-tab="results">Results</button>
+                </div>
+            </div>
+
+            <div id="upcoming" class="tab-content active">
+                <div class="fixtures-list">
+                    <div class="fixture-item">
+                        <div class="fixture-date-mini">
+                            <span>22 JUN</span>
                         </div>
+                        <div class="fixture-match">
+                            <h4>ALMAIL FC</h4>
+                            <p>vs UNITED FC</p>
+                            <span class="league">Premier League</span>
+                        </div>
+                        <div class="fixture-status">
+                            <span class="badge upcoming">Upcoming</span>
+                        </div>
+                        <a href="#" class="fixture-arrow"><i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="fixture-item">
+                        <div class="fixture-date-mini">
+                            <span>27 JUN</span>
+                        </div>
+                        <div class="fixture-match">
+                            <h4>CITY RIVALS</h4>
+                            <p>vs ALMAIL FC</p>
+                            <span class="league">Premier League</span>
+                        </div>
+                        <div class="fixture-status">
+                            <span class="badge upcoming">Upcoming</span>
+                        </div>
+                        <a href="#" class="fixture-arrow"><i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="fixture-item">
+                        <div class="fixture-date-mini">
+                            <span>03 JUL</span>
+                        </div>
+                        <div class="fixture-match">
+                            <h4>ALMAIL FC</h4>
+                            <p>vs THUNDER</p>
+                            <span class="league">Cup Match</span>
+                        </div>
+                        <div class="fixture-status">
+                            <span class="badge upcoming">Upcoming</span>
+                        </div>
+                        <a href="#" class="fixture-arrow"><i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="results" class="tab-content">
+                <div class="fixtures-list">
+                    <div class="fixture-item">
+                        <div class="fixture-date-mini">
+                            <span>15 JUN</span>
+                        </div>
+                        <div class="fixture-match">
+                            <h4>ALMAIL FC <span class="score">3</span></h4>
+                            <p>vs RIVALS FC <span class="score">1</span></p>
+                            <span class="league">Premier League</span>
+                        </div>
+                        <div class="fixture-status">
+                            <span class="badge win">Won</span>
+                        </div>
+                        <a href="#" class="fixture-arrow"><i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="fixture-item">
+                        <div class="fixture-date-mini">
+                            <span>10 JUN</span>
+                        </div>
+                        <div class="fixture-match">
+                            <h4>STARS FC <span class="score">2</span></h4>
+                            <p>vs ALMAIL FC <span class="score">2</span></p>
+                            <span class="league">Premier League</span>
+                        </div>
+                        <div class="fixture-status">
+                            <span class="badge draw">Draw</span>
+                        </div>
+                        <a href="#" class="fixture-arrow"><i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="fixture-item">
+                        <div class="fixture-date-mini">
+                            <span>05 JUN</span>
+                        </div>
+                        <div class="fixture-match">
+                            <h4>ALMAIL FC <span class="score">1</span></h4>
+                            <p>vs EAGLE UNITED <span class="score">2</span></p>
+                            <span class="league">Premier League</span>
+                        </div>
+                        <div class="fixture-status">
+                            <span class="badge loss">Lost</span>
+                        </div>
+                        <a href="#" class="fixture-arrow"><i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Fixtures Section -->
-    <section id="fixtures" class="fixtures">
+    <!-- Full Team Section -->
+    <section id="team" class="team-section">
         <div class="container">
-            <div class="section-title">
-                <h2>Upcoming Fixtures</h2>
-                <div class="title-underline"></div>
+            <h2>First Team Squad</h2>
+            <div class="squad-filter">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Defenders</button>
+                <button class="filter-btn">Midfielders</button>
+                <button class="filter-btn">Forwards</button>
+                <button class="filter-btn">Goalkeepers</button>
             </div>
-            <div class="fixtures-grid">
-                <div class="fixture-card">
-                    <div class="fixture-date">
-                        <span class="day">22</span>
-                        <span class="month">JUN</span>
-                    </div>
-                    <div class="fixture-details">
-                        <div class="team home-team">
-                            <h4>ALMAIL FC</h4>
-                            <p class="league">Premier League</p>
-                        </div>
-                        <div class="fixture-vs">VS</div>
-                        <div class="team away-team">
-                            <h4>UNITED</h4>
-                            <p class="league">Away</p>
-                        </div>
-                    </div>
-                    <a href="#" class="fixture-link">Details</a>
+            <div class="squad-grid">
+                <div class="squad-card">
+                    <div class="squad-photo player-1"></div>
+                    <h3>Striker Elite</h3>
+                    <p class="pos">Forward</p>
+                    <p class="num">#9</p>
                 </div>
-                <div class="fixture-card">
-                    <div class="fixture-date">
-                        <span class="day">27</span>
-                        <span class="month">JUN</span>
-                    </div>
-                    <div class="fixture-details">
-                        <div class="team home-team">
-                            <h4>ALMAIL FC</h4>
-                            <p class="league">Premier League</p>
-                        </div>
-                        <div class="fixture-vs">VS</div>
-                        <div class="team away-team">
-                            <h4>CITY RIVALS</h4>
-                            <p class="league">Home</p>
-                        </div>
-                    </div>
-                    <a href="#" class="fixture-link">Details</a>
+                <div class="squad-card">
+                    <div class="squad-photo player-2"></div>
+                    <h3>Midfield Master</h3>
+                    <p class="pos">Midfielder</p>
+                    <p class="num">#7</p>
                 </div>
-                <div class="fixture-card">
-                    <div class="fixture-date">
-                        <span class="day">03</span>
-                        <span class="month">JUL</span>
-                    </div>
-                    <div class="fixture-details">
-                        <div class="team home-team">
-                            <h4>ALMAIL FC</h4>
-                            <p class="league">Cup Match</p>
-                        </div>
-                        <div class="fixture-vs">VS</div>
-                        <div class="team away-team">
-                            <h4>THUNDER</h4>
-                            <p class="league">Away</p>
-                        </div>
-                    </div>
-                    <a href="#" class="fixture-link">Details</a>
+                <div class="squad-card">
+                    <div class="squad-photo player-3"></div>
+                    <h3>Captain Leadership</h3>
+                    <p class="pos">Defender</p>
+                    <p class="num">#1</p>
                 </div>
-                <div class="fixture-card">
-                    <div class="fixture-date">
-                        <span class="day">08</span>
-                        <span class="month">JUL</span>
-                    </div>
-                    <div class="fixture-details">
-                        <div class="team home-team">
-                            <h4>ALMAIL FC</h4>
-                            <p class="league">Premier League</p>
-                        </div>
-                        <div class="fixture-vs">VS</div>
-                        <div class="team away-team">
-                            <h4>STARS</h4>
-                            <p class="league">Home</p>
-                        </div>
-                    </div>
-                    <a href="#" class="fixture-link">Details</a>
+                <div class="squad-card">
+                    <div class="squad-photo player-4"></div>
+                    <h3>Goalkeeper Pro</h3>
+                    <p class="pos">Goalkeeper</p>
+                    <p class="num">#23</p>
+                </div>
+                <div class="squad-card">
+                    <div class="squad-photo player-5"></div>
+                    <h3>Defender Strong</h3>
+                    <p class="pos">Defender</p>
+                    <p class="num">#4</p>
+                </div>
+                <div class="squad-card">
+                    <div class="squad-photo player-6"></div>
+                    <h3>Winger Swift</h3>
+                    <p class="pos">Winger</p>
+                    <p class="num">#11</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- News Section -->
-    <section id="news" class="news">
+    <section id="news" class="news-section">
         <div class="container">
-            <div class="section-title">
+            <div class="news-header">
                 <h2>Latest News</h2>
-                <div class="title-underline"></div>
+                <a href="#" class="view-all-news">View All →</a>
             </div>
             <div class="news-grid">
-                <article class="news-card">
-                    <div class="news-image news-1"></div>
-                    <div class="news-content">
-                        <span class="news-date">June 15, 2026</span>
+                <article class="news-item featured-news">
+                    <div class="news-img news-1"></div>
+                    <div class="news-content-wrapper">
+                        <span class="news-category">Match Report</span>
                         <h3>Almail FC Secures Impressive Victory</h3>
-                        <p>In an exciting match, Almail FC defeated their rivals 3-1, showcasing exceptional teamwork and tactical brilliance throughout the game.</p>
-                        <a href="#" class="read-more">Read More →</a>
+                        <p>In an exciting match, Almail FC defeated their rivals 3-1, showcasing exceptional teamwork and tactical brilliance throughout the game. Captain Leadership led from the front with a stellar performance.</p>
+                        <div class="news-footer">
+                            <span class="news-date">June 15, 2026</span>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
                     </div>
                 </article>
-                <article class="news-card">
-                    <div class="news-image news-2"></div>
-                    <div class="news-content">
-                        <span class="news-date">June 12, 2026</span>
-                        <h3>Youth Academy Celebrates Success</h3>
-                        <p>Our youth academy has produced five exceptional young talents who will be joining the senior squad for the upcoming season.</p>
-                        <a href="#" class="read-more">Read More →</a>
+                <article class="news-item">
+                    <div class="news-img news-2"></div>
+                    <div class="news-content-wrapper">
+                        <span class="news-category">Academy</span>
+                        <h3>Youth Academy Success</h3>
+                        <p>Five exceptional young talents graduate from our youth academy and join the senior squad for the upcoming season.</p>
+                        <div class="news-footer">
+                            <span class="news-date">June 12, 2026</span>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
                     </div>
                 </article>
-                <article class="news-card">
-                    <div class="news-image news-3"></div>
-                    <div class="news-content">
-                        <span class="news-date">June 10, 2026</span>
-                        <h3>New Stadium Development Announced</h3>
-                        <p>Exciting news! Almail FC announces the commencement of our new state-of-the-art stadium project, enhancing fan experience for years to come.</p>
-                        <a href="#" class="read-more">Read More →</a>
+                <article class="news-item">
+                    <div class="news-img news-3"></div>
+                    <div class="news-content-wrapper">
+                        <span class="news-category">Facilities</span>
+                        <h3>New Stadium Development</h3>
+                        <p>Almail FC announces the commencement of a new state-of-the-art stadium project, enhancing fan experience.</p>
+                        <div class="news-footer">
+                            <span class="news-date">June 10, 2026</span>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
                     </div>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-- Sponsors Section -->
+    <section class="sponsors-section">
         <div class="container">
-            <div class="section-title">
-                <h2>Get In Touch</h2>
-                <div class="title-underline"></div>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="info-card">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h3>Address</h3>
-                        <p>Almail Stadium<br>123 Football Lane<br>Sports City, SC 12345</p>
-                    </div>
-                    <div class="info-card">
-                        <i class="fas fa-phone"></i>
-                        <h3>Phone</h3>
-                        <p>+1 (555) 123-4567<br>Mon-Fri: 9 AM - 6 PM</p>
-                    </div>
-                    <div class="info-card">
-                        <i class="fas fa-envelope"></i>
-                        <h3>Email</h3>
-                        <p>info@almailfc.com<br>tickets@almailfc.com</p>
-                    </div>
-                    <div class="info-card">
-                        <i class="fas fa-clock"></i>
-                        <h3>Match Days</h3>
-                        <p>Saturday: 3:00 PM<br>Wednesday: 7:30 PM</p>
-                    </div>
+            <h2>Official Partners</h2>
+            <div class="sponsors-grid">
+                <div class="sponsor-logo">
+                    <span>Premier Partner</span>
                 </div>
-                <form class="contact-form" id="contactForm">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Your Message" rows="6" required></textarea>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
+                <div class="sponsor-logo">
+                    <span>Kit Sponsor</span>
+                </div>
+                <div class="sponsor-logo">
+                    <span>Official Partner</span>
+                </div>
+                <div class="sponsor-logo">
+                    <span>Technology Partner</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Join Almail FC Community</h2>
+            <p>Be part of our legacy. Get exclusive access to member-only content, early ticket sales, and more.</p>
+            <div class="cta-buttons">
+                <a href="#tickets" class="btn btn-primary">Buy Tickets</a>
+                <a href="#" class="btn btn-secondary">Become a Member</a>
+                <a href="#" class="btn btn-outline">Visit Shop</a>
             </div>
         </div>
     </section>
@@ -331,46 +427,61 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>ALMAIL FC</h4>
-                    <p>Building excellence in football through dedication, teamwork, and passion for the game.</p>
-                    <div class="social-links">
+            <div class="footer-main">
+                <div class="footer-column">
+                    <h4>About Club</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Management</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Tickets & Hospitality</h4>
+                    <ul>
+                        <li><a href="#">Buy Tickets</a></li>
+                        <li><a href="#">Season Passes</a></li>
+                        <li><a href="#">Hospitality</a></li>
+                        <li><a href="#">Ballroom Hire</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Shop & Merchandise</h4>
+                    <ul>
+                        <li><a href="#">Official Store</a></li>
+                        <li><a href="#">Kits</a></li>
+                        <li><a href="#">Merchandise</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="#">Youth Academy</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-footer">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
                     </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#team">Team</a></li>
-                        <li><a href="#fixtures">Fixtures</a></li>
-                        <li><a href="#news">News</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Information</h4>
-                    <ul>
-                        <li><a href="#">Ticket Booking</a></li>
-                        <li><a href="#">Shop</a></li>
-                        <li><a href="#">Sponsors</a></li>
-                        <li><a href="#">Careers</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Newsletter</h4>
-                    <p>Subscribe to get updates about matches and news</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Enter your email" required>
-                        <button type="submit">Subscribe</button>
-                    </form>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Almail Football Club. All rights reserved.</p>
+                <p>&copy; 2026 Almail Football Club. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
             </div>
         </div>
     </footer>
