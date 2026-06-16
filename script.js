@@ -1,71 +1,63 @@
-// Mobile Menu Toggle
+// ── Mobile Menu ───────────────────────────────────────
 const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.getElementById('navLinks');
+const navLinks   = document.getElementById('navLinks');
 
-if (menuToggle) {
+if (menuToggle && navLinks) {
     menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        navLinks.classList.toggle('active');
+        const open = navLinks.classList.toggle('active');
+        menuToggle.setAttribute('aria-expanded', open);
     });
 
-    // Close menu when a link is clicked
+    // Close when a non-dropdown link is clicked
     navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-            menuToggle.classList.remove('active');
-            navLinks.classList.remove('active');
+            if (!link.closest('.dropdown-menu')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    });
+
+    // Mobile dropdown toggles (tap to open/close)
+    navLinks.querySelectorAll('.dropdown > a').forEach(trigger => {
+        trigger.addEventListener('click', e => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                trigger.closest('.dropdown').classList.toggle('open');
+            }
         });
     });
 }
 
-// Tabs functionality for Fixtures
-const tabButtons = document.querySelectorAll('.tab-btn');
-const tabContents = document.querySelectorAll('.tab-content');
-
-tabButtons.forEach(btn => {
+// ── Tabs (Fixtures / Results) ─────────────────────────
+document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-        const tabId = btn.getAttribute('data-tab');
-
-        // Remove active class from all buttons and contents
-        tabButtons.forEach(b => b.classList.remove('active'));
-        tabContents.forEach(content => content.classList.remove('active'));
-
-        // Add active class to clicked button and corresponding content
+        const tabId = btn.dataset.tab;
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
         btn.classList.add('active');
-        document.getElementById(tabId).classList.add('active');
+        const target = document.getElementById(tabId);
+        if (target) target.classList.add('active');
     });
 });
 
-// Squad filter functionality
-const filterButtons = document.querySelectorAll('.filter-btn');
-const squadCards = document.querySelectorAll('.squad-card');
-
-filterButtons.forEach(btn => {
+// ── Squad Filter ──────────────────────────────────────
+document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-        filterButtons.forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-
-        const filter = btn.textContent.toLowerCase();
-
-        squadCards.forEach(card => {
-            if (filter === 'all') {
-                card.style.display = 'block';
-            }
-        });
     });
 });
 
-// Smooth scroll for navigation links
+// ── Smooth Scroll ─────────────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
-        if (href !== '#' && href !== '') {
-            e.preventDefault();
-
+        if (href && href !== '#' && href.length > 1) {
             const target = document.querySelector(href);
             if (target) {
-                const offsetTop = target.offsetTop - 100;
+                e.preventDefault();
                 window.scrollTo({
-                    top: offsetTop,
+                    top: target.offsetTop - 80,
                     behavior: 'smooth'
                 });
             }
@@ -73,88 +65,36 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Scroll animations for cards
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
+// ── Scroll-reveal animations ──────────────────────────
+const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('revealed');
+            revealObserver.unobserve(entry.target);
         }
     });
-}, observerOptions);
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-document.querySelectorAll('.squad-card, .news-item, .fixture-item, .featured-player, .sponsor-logo').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
+document.querySelectorAll(
+    '.squad-card, .news-item, .fixture-item, .featured-player, .sponsor-logo, .stat-item'
+).forEach(el => {
+    el.classList.add('reveal-item');
+    revealObserver.observe(el);
 });
 
-// Navbar enhancement
-const navbar = document.querySelector('.navbar');
-
-window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset;
-
-    if (scrollTop > 100) {
-        if (navbar) {
-            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.4)';
-        }
-    } else {
-        if (navbar) {
-            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)';
-        }
-    }
-});
-
-// Active navigation link based on scroll
+// ── Active nav link on scroll ─────────────────────────
 window.addEventListener('scroll', () => {
     let current = '';
-
-    document.querySelectorAll('section').forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id');
+    document.querySelectorAll('section[id], header[id]').forEach(section => {
+        if (window.scrollY >= section.offsetTop - 120) {
+            current = section.id;
         }
     });
 
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
-            link.classList.add('active');
+    document.querySelectorAll('.nav-links > li > a').forEach(link => {
+        link.style.color = '';
+        if (link.getAttribute('href') === `#${current}`) {
+            link.style.color = 'var(--accent-gold)';
         }
     });
-});
-
-// Contact form submission
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Thank you for contacting us! We\'ll get back to you soon.');
-        contactForm.reset();
-    });
-}
-
-// Newsletter form submission
-document.querySelectorAll('.newsletter-form').forEach(form => {
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const email = form.querySelector('input[type="email"]').value;
-        alert(`Thank you for subscribing! A confirmation email has been sent to ${email}`);
-        form.reset();
-    });
-});
-
-// Load animation on page load
-window.addEventListener('load', () => {
-    const heroContent = document.querySelector('.hero-content');
-    if (heroContent) {
-        heroContent.style.opacity = '1';
-    }
-});
+}, { passive: true });
