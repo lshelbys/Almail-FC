@@ -170,12 +170,26 @@ if (floatMenuBtn && floatMenuPanel) {
     });
 }
 
-// ── Lineup Player Detail Toggle ──────────────────────────
-function togglePlayerDetail(btn) {
-    const detail = btn.nextElementSibling;
-    const isOpen = detail.classList.contains('open');
-    btn.classList.toggle('open', !isOpen);
-    detail.classList.toggle('open', !isOpen);
+// ── Player Profile View ───────────────────────────────────
+const playerData = {
+    tayem: { name: 'Tayem Eyad', position: 'Left Winger', nationality: 'Palestinian', dob: 'March 5, 2012' },
+    jasem: { name: 'Jasem Almail', position: 'Midfielder', nationality: 'Kuwaiti', dob: 'February 19, 2014' }
+};
+
+function showPlayerProfile(id) {
+    const p = playerData[id];
+    document.getElementById('player-profile-card').innerHTML =
+        `<div class="profile-name">${p.name}</div>
+        <div class="profile-detail-item"><span class="profile-label">Position</span><span class="profile-value">${p.position}</span></div>
+        <div class="profile-detail-item"><span class="profile-label">Nationality</span><span class="profile-value">${p.nationality}</span></div>
+        <div class="profile-detail-item"><span class="profile-label">Date of Birth</span><span class="profile-value">${p.dob}</span></div>`;
+    document.getElementById('lineup-list-view').classList.add('hidden');
+    document.getElementById('player-profile-view').classList.remove('hidden');
+}
+
+function hidePlayerProfile() {
+    document.getElementById('player-profile-view').classList.add('hidden');
+    document.getElementById('lineup-list-view').classList.remove('hidden');
 }
 
 // ── Modal Tab Switching ───────────────────────────────────

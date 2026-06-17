@@ -858,9 +858,73 @@ body.rtl-mode .back-to-top {
     font-size: 0.9rem;
 }
 
-/* ── LINEUP TAB ─────────────────────────────────────────────── */
-.lineup-section { padding: 0.5rem 0; }
+/* ── GOALS TIMELINE ─────────────────────────────────────────── */
+.goals-timeline { padding: 0.25rem 0; }
 
+.goals-header-row {
+    display: grid;
+    grid-template-columns: 1fr 44px 1fr;
+    padding: 0.6rem 0 0.75rem;
+    margin-bottom: 0.25rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.goals-team-lbl {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    color: var(--text-gray);
+}
+
+.goals-team-lbl.align-right { text-align: right; }
+
+.goal-row {
+    display: grid;
+    grid-template-columns: 1fr 44px 1fr;
+    align-items: center;
+    min-height: 42px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.goal-time-col {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--text-gray);
+    text-align: center;
+}
+
+.goal-home-col {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.45rem;
+    padding-right: 0.5rem;
+}
+
+.goal-away-col {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding-left: 0.5rem;
+}
+
+.goal-ball { font-size: 0.65rem; color: var(--white); }
+
+.goal-score-pill {
+    font-size: 0.73rem;
+    font-weight: 700;
+    background: var(--primary-light);
+    border: 1px solid var(--border);
+    padding: 0.12rem 0.45rem;
+    border-radius: 20px;
+    color: var(--white);
+    white-space: nowrap;
+}
+
+.goal-scorer { font-size: 0.85rem; color: var(--white); }
+
+/* ── LINEUP TAB ─────────────────────────────────────────────── */
+.hidden { display: none !important; }
 
 .lineup-list {
     list-style: none;
@@ -874,142 +938,79 @@ body.rtl-mode .back-to-top {
     width: 100%;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 0.85rem 0;
+    justify-content: space-between;
+    padding: 1rem 0;
     background: none;
     border: none;
     cursor: pointer;
     color: var(--white);
-    text-align: left;
 }
 
-.lineup-player-btn:hover .lineup-player-name { color: var(--accent-light); }
-
-.lineup-pos-badge {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    background: var(--border);
-    color: var(--text-gray);
-    padding: 0.2rem 0.45rem;
-    border-radius: 3px;
-    min-width: 30px;
-    text-align: center;
-}
+.lineup-player-btn:hover .lineup-player-name { color: rgba(255,255,255,0.6); }
 
 .lineup-player-name {
-    flex: 1;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 600;
     transition: color 0.2s;
 }
 
-.lineup-chevron {
+.lineup-chevron-right {
     font-size: 0.7rem;
     color: var(--text-gray);
-    transition: transform 0.25s ease;
 }
 
-.lineup-player-btn.open .lineup-chevron { transform: rotate(180deg); }
+/* ── PLAYER PROFILE ─────────────────────────────────────────── */
+.player-profile-view { padding: 0; }
 
-.lineup-player-detail {
-    display: none;
-    padding: 0.5rem 0 1rem 2.75rem;
-}
-
-.lineup-player-detail.open { display: block; }
-
-.player-detail-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.75rem;
-}
-
-.player-detail-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-}
-
-.player-detail-label {
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
+.profile-back-btn {
+    background: none;
+    border: none;
     color: var(--text-gray);
-}
-
-.player-detail-value {
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     font-weight: 600;
-    color: var(--white);
-}
-
-@media (max-width: 480px) {
-    .player-detail-grid { grid-template-columns: 1fr 1fr; }
-}
-
-/* ── GOALS TIMELINE ─────────────────────────────────────────── */
-.goals-timeline {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    padding: 0.5rem 0;
-}
-
-.goals-column {
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    padding: 0.75rem 0 1.25rem;
     display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-
-.goal-item {
-    display: grid;
-    grid-template-columns: auto auto auto 1fr;
-    grid-template-rows: auto auto;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.75rem 0;
+    transition: color 0.2s;
+}
+
+.profile-back-btn:hover { color: var(--white); }
+
+.player-profile-card { padding: 0 0 1rem; }
+
+.profile-name {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: var(--white);
+    padding-bottom: 1rem;
+    margin-bottom: 0.25rem;
     border-bottom: 1px solid var(--border);
 }
 
-.almail-goals .goal-item {
-    grid-template-columns: auto auto auto 1fr;
+.profile-detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
-.shabab-goals .goal-item {
-    grid-template-columns: 1fr auto auto auto;
-    direction: rtl;
-}
-
-.goal-minute {
-    font-size: 0.8rem;
+.profile-label {
+    font-size: 0.68rem;
     font-weight: 700;
+    letter-spacing: 0.09em;
     color: var(--text-gray);
-    text-align: center;
+    text-transform: uppercase;
 }
 
-.goal-icon {
-    font-size: 0.5rem;
-    color: var(--accent-light);
-}
-
-.goal-score {
-    font-size: 0.85rem;
-    font-weight: 700;
+.profile-value {
+    font-size: 0.9rem;
+    font-weight: 600;
     color: var(--white);
-    text-align: center;
-}
-
-.goal-player {
-    font-size: 0.85rem;
-    color: var(--white);
-    text-align: left;
-}
-
-.shabab-goals .goal-player { text-align: right; }
-
-@media (max-width: 768px) {
-    .goals-timeline { grid-template-columns: 1fr; }
 }
 
 /* ── SQUAD SECTION ──────────────────────────────────────────– */
