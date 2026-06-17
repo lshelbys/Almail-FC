@@ -12,26 +12,25 @@
     <!-- ── PROMO BANNER ──────────────────────────────────── -->
     <div class="promo-banner">
         <div class="banner-content">
-            <span class="banner-text">Professional Amateur Football Club</span>
+            <span class="banner-text">Professional Amateur Football Club — Established 2020</span>
         </div>
         <div class="banner-right">
-            <a href="#login" class="banner-icon"><i class="fas fa-user-circle"></i> Login</a>
-            <a href="#" class="banner-cta">BECOME A MEMBER</a>
+            <a href="mailto:almailclub@gmail.com" class="banner-icon"><i class="fas fa-envelope"></i> Contact</a>
             <select class="banner-lang">
                 <option>EN</option>
                 <option>ES</option>
                 <option>FR</option>
             </select>
-            <a href="#" class="banner-icon"><i class="fas fa-globe"></i></a>
         </div>
     </div>
 
     <!-- ── MAIN HEADER ───────────────────────────────────── -->
     <header class="main-header">
         <div class="header-inner">
-            <a href="#" class="club-logo">
+            <a href="index.html" class="club-logo">
                 <div class="club-crest">
-                    <span class="crest-text">ASC</span>
+                    <img src="logo.png" alt="Almail SC" class="crest-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <span class="crest-text crest-fallback">ASC</span>
                 </div>
             </a>
             <nav class="main-nav" id="mainNav">
@@ -53,10 +52,10 @@
     <nav class="secondary-nav">
         <div class="secondary-inner">
             <a href="#latest" class="sec-link active">Latest</a>
-            <a href="#" class="sec-link">Schedule</a>
-            <a href="#" class="sec-link">Results</a>
+            <a href="#matches" class="sec-link">Results</a>
             <a href="#teams" class="sec-link">Squad</a>
             <a href="#support" class="sec-link">Stadium</a>
+            <a href="#support" class="sec-link">Club</a>
         </div>
     </nav>
 
@@ -65,101 +64,17 @@
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
+            <div class="hero-logo-wrap">
+                <img src="logo.png" alt="Almail SC" class="hero-logo-img" onerror="this.style.display='none';">
+            </div>
             <h1 class="hero-title">ALMAIL SPORTS CLUB</h1>
             <p class="hero-subtitle">Professional Amateur Football Club</p>
             <div class="hero-buttons">
-                <a href="#matches" class="hero-btn btn-red">VIEW MATCHES</a>
+                <a href="#matches" class="hero-btn btn-white">VIEW RESULTS</a>
                 <a href="#teams" class="hero-btn btn-ghost">OUR SQUAD</a>
             </div>
         </div>
-        <div class="hero-badge">
-            <span class="badge-label">AMATEUR</span>
-            <span class="badge-number">2025</span>
-        </div>
     </section>
-
-    <!-- ── NEXT MATCH ────────────────────────────────────– -->
-    <section id="matches" class="next-match-section">
-        <div class="match-container">
-            <h2>NEXT MATCH</h2>
-            <div class="match-card" onclick="openMatchDetail('dumankaya')">
-                <div class="match-info">
-                    <div class="competition">DUMANKAYA CUP FINAL</div>
-                    <div class="match-date">FRI 8 AUG 2025 • 7:55 PM</div>
-                </div>
-                <div class="match-teams">
-                    <div class="team home">
-                        <div class="team-crest">A</div>
-                        <h3>ALMAIL SC</h3>
-                        <span>Home</span>
-                    </div>
-                    <div class="vs">VS</div>
-                    <div class="team away">
-                        <div class="team-crest alt">S</div>
-                        <h3>SHABAB AL HURA</h3>
-                        <span>Away</span>
-                    </div>
-                </div>
-                <div class="match-cta">
-                    <a href="#" class="btn-match">VIEW DETAILS</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── SEASON SELECTOR ────────────────────────────────– -->
-    <div class="season-selector">
-        <button class="season-btn active" onclick="filterSeason('2025')">2025 Season</button>
-        <button class="season-btn" onclick="filterSeason('2024')">2024 Season</button>
-        <button class="season-btn" onclick="filterSeason('2023')">2023 Season</button>
-    </div>
-
-    <!-- ── FIXTURES SECTION ──────────────────────────────── -->
-    <section class="fixtures-section">
-        <div class="section-container">
-            <h2 class="section-title">FIXTURES & RESULTS</h2>
-            <div class="fixtures-list">
-                <!-- 2025 Season -->
-                <div class="fixture upcoming season-2025" onclick="openMatchDetail('dumankaya')">
-                    <span class="fx-date">8 AUG</span>
-                    <span class="fx-comp">DUMANKAYA CUP FINAL</span>
-                    <span class="fx-teams">ALMAIL SC vs SHABAB AL HURA</span>
-                    <span class="fx-status">UPCOMING</span>
-                </div>
-
-                <!-- 2024 Season -->
-                <div class="fixture result season-2024" style="display: none;" onclick="openMatchDetail('result-1')">
-                    <span class="fx-date">15 MAR</span>
-                    <span class="fx-comp">FRIENDLY</span>
-                    <span class="fx-teams">ALMAIL SC vs LOCAL RIVALS</span>
-                    <span class="fx-status result-score">2-1</span>
-                </div>
-                <div class="fixture result season-2024" style="display: none;" onclick="openMatchDetail('result-2')">
-                    <span class="fx-date">8 MAR</span>
-                    <span class="fx-comp">LEAGUE MATCH</span>
-                    <span class="fx-teams">CITY UNITED vs ALMAIL SC</span>
-                    <span class="fx-status result-score">1-1</span>
-                </div>
-
-                <!-- 2023 Season -->
-                <div class="fixture result season-2023" style="display: none;" onclick="openMatchDetail('result-3')">
-                    <span class="fx-date">10 DEC</span>
-                    <span class="fx-comp">CUP MATCH</span>
-                    <span class="fx-teams">ALMAIL SC vs RIVALS</span>
-                    <span class="fx-status result-score">3-0</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── MATCH DETAIL MODAL ─────────────────────────────── -->
-    <div class="match-detail-modal" id="matchModal">
-        <div class="match-detail-content">
-            <button class="close-modal" onclick="closeMatchDetail()">&times;</button>
-            <h3 id="modalTitle">Match Details</h3>
-            <div id="modalDetails"></div>
-        </div>
-    </div>
 
     <!-- ── LATEST NEWS ────────────────────────────────────– -->
     <section id="latest" class="news-section">
@@ -167,101 +82,189 @@
             <h2 class="section-title">LATEST NEWS</h2>
             <div class="news-grid">
                 <article class="news-card featured">
-                    <div class="news-img news-img-1"></div>
+                    <div class="news-img news-img-1">
+                        <div class="news-category-badge">CLUB NEWS</div>
+                    </div>
                     <div class="news-body">
-                        <span class="news-category">CLUB NEWS</span>
+                        <span class="news-meta">17 JUN 2026 &nbsp;&bull;&nbsp; Club News</span>
                         <h3>Almail SC Renews Amateur Club Status for 2025</h3>
-                        <p>Almail Sports Club is proud to announce the renewal of its amateur club status for the 2025 season, reaffirming our commitment to grassroots football and developing young talent in the community. This designation reflects our dedication to maintaining the spirit of fair play and sportsmanship.</p>
-                        <a href="#" class="news-link">READ MORE →</a>
+                        <p>Almail Sports Club is proud to announce the renewal of its amateur club status for the 2025 season, reaffirming our commitment to grassroots football and developing talent in the community.</p>
+                        <a href="news-amateur-status.html" class="news-link">READ FULL ARTICLE</a>
                     </div>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- ── TEAMS/SQUAD SECTION ────────────────────────────── -->
+    <!-- ── MATCHES SECTION ───────────────────────────────── -->
+    <section id="matches" class="matches-section">
+        <div class="section-container">
+            <h2 class="section-title">MATCHES</h2>
+
+            <!-- Season Selector -->
+            <div class="season-tabs">
+                <button class="season-tab active" data-season="2025">2025</button>
+                <button class="season-tab" data-season="2024">2024</button>
+                <button class="season-tab" data-season="2023">2023</button>
+                <button class="season-tab" data-season="2022">2022</button>
+            </div>
+
+            <!-- 2025 Season -->
+            <div class="season-panel active" id="season-2025">
+                <div class="match-app-card" onclick="openMatchDetail('dumankaya')">
+                    <div class="match-app-header">
+                        <span class="match-competition-badge">DUMANKAYA CUP</span>
+                        <span class="match-type-badge">FINAL</span>
+                    </div>
+                    <div class="match-app-body">
+                        <div class="match-app-team home-team">
+                            <div class="match-team-crest">
+                                <img src="logo.png" alt="ASC" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <span class="crest-placeholder">A</span>
+                            </div>
+                            <span class="match-team-name">ALMAIL SC</span>
+                        </div>
+                        <div class="match-app-score-block">
+                            <div class="match-app-score">7 <span class="score-sep">–</span> 4</div>
+                            <div class="match-app-status ft">FT</div>
+                        </div>
+                        <div class="match-app-team away-team">
+                            <div class="match-team-crest alt-crest">
+                                <span class="crest-placeholder">S</span>
+                            </div>
+                            <span class="match-team-name">SHABAB AL HURA</span>
+                        </div>
+                    </div>
+                    <div class="match-app-footer">
+                        <span><i class="fas fa-calendar"></i> Fri 8 Aug 2025</span>
+                        <span><i class="fas fa-clock"></i> 7:55 PM</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Dumankaya Street Stadium</span>
+                        <span class="match-details-link">MATCH DETAILS <i class="fas fa-chevron-right"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2024 Season -->
+            <div class="season-panel" id="season-2024">
+                <div class="coming-soon-matches">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>2024 Season Matches</h3>
+                    <p>Match records for the 2024 season are coming soon.</p>
+                </div>
+            </div>
+
+            <!-- 2023 Season -->
+            <div class="season-panel" id="season-2023">
+                <div class="coming-soon-matches">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>2023 Season Matches</h3>
+                    <p>Match records for the 2023 season are coming soon.</p>
+                </div>
+            </div>
+
+            <!-- 2022 Season -->
+            <div class="season-panel" id="season-2022">
+                <div class="coming-soon-matches">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>2022 Season Matches</h3>
+                    <p>Match records for the 2022 season are coming soon.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── MATCH DETAIL MODAL ─────────────────────────────── -->
+    <div class="match-detail-modal" id="matchModal">
+        <div class="match-detail-content">
+            <button class="close-modal" onclick="closeMatchDetail()">&times;</button>
+
+            <!-- Match Header -->
+            <div class="modal-match-header">
+                <div class="modal-competition">DUMANKAYA CUP &mdash; FINAL</div>
+                <div class="modal-teams-row">
+                    <div class="modal-team">
+                        <div class="modal-crest home">
+                            <img src="logo.png" alt="ASC" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="crest-placeholder">A</span>
+                        </div>
+                        <span class="modal-team-name">ALMAIL SC</span>
+                    </div>
+                    <div class="modal-score-block">
+                        <div class="modal-score">7 &ndash; 4</div>
+                        <div class="modal-status">FT</div>
+                    </div>
+                    <div class="modal-team">
+                        <div class="modal-crest away">S</div>
+                        <span class="modal-team-name">SHABAB AL HURA</span>
+                    </div>
+                </div>
+                <div class="modal-meta-row">
+                    <span><i class="fas fa-calendar"></i> Fri 8 Aug 2025</span>
+                    <span><i class="fas fa-clock"></i> 7:55 PM</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Dumankaya Street Stadium</span>
+                </div>
+            </div>
+
+            <!-- Goals / Lineup coming soon notice -->
+            <div class="modal-tabs">
+                <button class="modal-tab active" data-tab="details">DETAILS</button>
+                <button class="modal-tab" data-tab="goals">GOALS</button>
+                <button class="modal-tab" data-tab="lineup">LINE-UP</button>
+            </div>
+
+            <div class="modal-tab-panel active" id="tab-details">
+                <div class="detail-row">
+                    <span class="detail-label">Competition</span>
+                    <span class="detail-value">Dumankaya Cup</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Round</span>
+                    <span class="detail-value">Final</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Date</span>
+                    <span class="detail-value">Friday, 8 August 2025</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Kick-off</span>
+                    <span class="detail-value">7:55 PM</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Venue</span>
+                    <span class="detail-value">Dumankaya Street Stadium</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Result</span>
+                    <span class="detail-value winner">Almail SC WIN</span>
+                </div>
+            </div>
+
+            <div class="modal-tab-panel" id="tab-goals">
+                <div class="coming-soon-tab">
+                    <i class="fas fa-futbol"></i>
+                    <p>Goal timeline coming soon.</p>
+                </div>
+            </div>
+
+            <div class="modal-tab-panel" id="tab-lineup">
+                <div class="coming-soon-tab">
+                    <i class="fas fa-users"></i>
+                    <p>Line-up details coming soon.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ── SQUAD SECTION ─────────────────────────────────── -->
     <section id="teams" class="teams-section">
         <div class="section-container">
             <h2 class="section-title">MEN'S FIRST TEAM</h2>
-            <div class="players-grid">
-                <div class="player-card">
-                    <div class="player-img player-1"></div>
-                    <div class="player-info">
-                        <span class="player-num">9</span>
-                        <h4>Ahmed Hassan</h4>
-                        <p class="position">Striker</p>
-                        <div class="player-details">
-                            <span><strong>Country:</strong> Egypt</span>
-                            <span><strong>DOB:</strong> 15/03/1998</span>
-                            <span><strong>Height:</strong> 6'1"</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="player-card">
-                    <div class="player-img player-2"></div>
-                    <div class="player-info">
-                        <span class="player-num">7</span>
-                        <h4>Omar Al-Rashid</h4>
-                        <p class="position">Midfielder</p>
-                        <div class="player-details">
-                            <span><strong>Country:</strong> Saudi Arabia</span>
-                            <span><strong>DOB:</strong> 22/07/2000</span>
-                            <span><strong>Height:</strong> 5'11"</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="player-card">
-                    <div class="player-img player-3"></div>
-                    <div class="player-info">
-                        <span class="player-num">5</span>
-                        <h4>Mohamed Ali</h4>
-                        <p class="position">Defender</p>
-                        <div class="player-details">
-                            <span><strong>Country:</strong> Egypt</span>
-                            <span><strong>DOB:</strong> 10/05/1997</span>
-                            <span><strong>Height:</strong> 6'2"</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="player-card">
-                    <div class="player-img player-4"></div>
-                    <div class="player-info">
-                        <span class="player-num">1</span>
-                        <h4>Khalid Ibrahim</h4>
-                        <p class="position">Goalkeeper</p>
-                        <div class="player-details">
-                            <span><strong>Country:</strong> UAE</span>
-                            <span><strong>DOB:</strong> 05/11/1996</span>
-                            <span><strong>Height:</strong> 6'3"</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="player-card">
-                    <div class="player-img player-5"></div>
-                    <div class="player-info">
-                        <span class="player-num">11</span>
-                        <h4>Samir Al-Hamad</h4>
-                        <p class="position">Winger</p>
-                        <div class="player-details">
-                            <span><strong>Country:</strong> Kuwait</span>
-                            <span><strong>DOB:</strong> 18/02/2002</span>
-                            <span><strong>Height:</strong> 5'10"</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="player-card">
-                    <div class="player-img player-6"></div>
-                    <div class="player-info">
-                        <span class="player-num">4</span>
-                        <h4>Tariq Al-Mansouri</h4>
-                        <p class="position">Defender</p>
-                        <div class="player-details">
-                            <span><strong>Country:</strong> Bahrain</span>
-                            <span><strong>DOB:</strong> 28/09/1999</span>
-                            <span><strong>Height:</strong> 6'0"</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="coming-soon-section">
+                <i class="fas fa-users"></i>
+                <h3>Squad Coming Soon</h3>
+                <p>Player profiles for the Almail Sports Club squad will be published soon. Check back for full squad details.</p>
             </div>
         </div>
     </section>
@@ -269,10 +272,11 @@
     <!-- ── TICKETS SECTION ─────────────────────────────────– -->
     <section id="tickets" class="tickets-section">
         <div class="section-container">
-            <h2 class="section-title">TICKETS & MEMBERSHIP</h2>
+            <h2 class="section-title">TICKETS &amp; MEMBERSHIP</h2>
             <div class="coming-soon-section">
-                <h3>🎟️ Tickets Coming Soon</h3>
-                <p>Ticketing services will be available soon. Stay tuned for updates on how to get your match tickets!</p>
+                <i class="fas fa-ticket-alt"></i>
+                <h3>Tickets Coming Soon</h3>
+                <p>Ticketing services will be available soon. Stay tuned for updates on how to get your match tickets.</p>
             </div>
         </div>
     </section>
@@ -282,36 +286,44 @@
         <div class="section-container">
             <h2 class="section-title">OFFICIAL SHOP</h2>
             <div class="coming-soon-section">
-                <h3>🛍️ Official Shop Coming Soon</h3>
-                <p>Our official merchandise shop is launching soon! Check back for exclusive Almail SC gear and apparel.</p>
+                <i class="fas fa-shopping-bag"></i>
+                <h3>Official Shop Coming Soon</h3>
+                <p>Our official merchandise shop is launching soon. Check back for exclusive Almail SC gear and apparel.</p>
             </div>
         </div>
     </section>
 
-    <!-- ── SUPPORT/CLUB INFO ───────────────────────────────– -->
+    <!-- ── CLUB INFO ──────────────────────────────────────── -->
     <section id="support" class="support-section">
         <div class="section-container">
             <h2 class="section-title">CLUB INFORMATION</h2>
             <div class="info-grid">
                 <div class="info-box">
                     <h4><i class="fas fa-building"></i> STADIUM</h4>
-                    <p>Home of Almail FC. Bizarri's Stadium is our proud home ground with modern facilities for players and supporters alike.</p>
-                    <a href="#">LEARN MORE →</a>
+                    <p>Bizarri's Stadium is the proud home ground of Almail Sports Club, providing a quality environment for players and supporters.</p>
+                    <a href="stadium.html" class="info-link">LEARN MORE</a>
                 </div>
                 <div class="info-box">
                     <h4><i class="fas fa-history"></i> HISTORY</h4>
-                    <p>Coming Soon. Discover the rich heritage and journey of Almail Sports Club through the years.</p>
-                    <a href="#">COMING SOON →</a>
+                    <p>The full history of Almail Sports Club is coming soon. Discover the journey of the club from its founding to today.</p>
+                    <span class="info-link disabled">COMING SOON</span>
                 </div>
                 <div class="info-box">
-                    <h4><i class="fas fa-users"></i> PLAYER FORM</h4>
-                    <p>Interested in joining Almail SC? Send us your details! Required info: Player face, Position, Date of Birth, Name, Country, Height.</p>
-                    <a href="mailto:almailclub@gmail.com?subject=Player%20Application%20Form&body=Please%20provide:%0A-%20Player%20Name%0A-%20Position%0A-%20Date%20of%20Birth%0A-%20Country%0A-%20Height%0A-%20Player%20Photo%20(attach)" class="player-form-link">APPLY NOW</a>
+                    <h4><i class="fas fa-running"></i> PLAYER FORM</h4>
+                    <p>Interested in joining Almail SC? Get in touch with the club directly. Please provide: name, position, date of birth, country, height, and a photo.</p>
+                    <div class="contact-links">
+                        <a href="mailto:almailclub@gmail.com?subject=Player%20Application&body=Name:%0APosition:%0ADate%20of%20Birth:%0ACountry:%0AHeight:%0A%0APlease%20attach%20a%20photo." class="info-link">EMAIL US</a>
+                        <a href="https://wa.me/14402785870?text=Hi%2C%20I%27m%20interested%20in%20joining%20Almail%20SC" target="_blank" rel="noopener" class="info-link whatsapp">WHATSAPP</a>
+                    </div>
+                    <div class="contact-details">
+                        <span><i class="fas fa-envelope"></i> almailclub@gmail.com</span>
+                        <span><i class="fab fa-whatsapp"></i> +1 (440) 278-5870</span>
+                    </div>
                 </div>
                 <div class="info-box">
                     <h4><i class="fas fa-envelope"></i> CONTACT</h4>
-                    <p>Get in touch with us for inquiries about membership, events, or general information about the club.</p>
-                    <a href="mailto:almailclub@gmail.com">CONTACT US →</a>
+                    <p>Get in touch with us for general enquiries about the club, partnerships, or supporter information.</p>
+                    <a href="mailto:almailclub@gmail.com" class="info-link">CONTACT US</a>
                 </div>
             </div>
         </div>
@@ -321,51 +333,69 @@
     <footer class="footer">
         <div class="footer-main">
             <div class="footer-brand">
-                <div class="footer-crest">ASC</div>
+                <div class="footer-crest">
+                    <img src="logo.png" alt="ASC" class="footer-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <span class="footer-crest-text">ASC</span>
+                </div>
                 <div>
                     <h3>ALMAIL SPORTS CLUB</h3>
                     <p>Professional Amateur Football</p>
+                    <p class="footer-email"><a href="mailto:almailclub@gmail.com">almailclub@gmail.com</a></p>
                 </div>
             </div>
             <div class="footer-cols">
                 <div class="footer-col">
                     <h4>CLUB</h4>
                     <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Stadium</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#support">About Us</a></li>
+                        <li><a href="#support">Stadium</a></li>
+                        <li><a href="#support">History</a></li>
+                        <li><a href="#support">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>SQUAD</h4>
+                    <h4>FOOTBALL</h4>
                     <ul>
-                        <li><a href="#">Men's First Team</a></li>
-                        <li><a href="#">Youth Academy</a></li>
-                        <li><a href="#">Player Form</a></li>
-                        <li><a href="#">Reserves</a></li>
+                        <li><a href="#teams">First Team</a></li>
+                        <li><a href="#matches">Results</a></li>
+                        <li><a href="#matches">Fixtures</a></li>
+                        <li><a href="#support">Player Form</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>MORE</h4>
-                    <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Accessibility</a></li>
-                        <li><a href="#">Sitemap</a></li>
+                    <h4>FOLLOW US</h4>
+                    <ul class="social-list">
+                        <li><a href="https://instagram.com/almailclub" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> @almailclub</a></li>
+                        <li><a href="https://x.com/almailclub" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i> @almailclub</a></li>
+                        <li><a href="https://youtube.com/@almailsportsclub" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> @almailsportsclub</a></li>
+                        <li><a href="https://tiktok.com/@almail_sc" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i> @almail_sc</a></li>
                     </ul>
                 </div>
             </div>
         </div>
+
+        <!-- Social Icons Bar -->
         <div class="footer-socials">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="https://instagram.com/almailclub" target="_blank" rel="noopener" class="social-icon-link">
+                <i class="fab fa-instagram"></i>
+                <span>@almailclub</span>
+            </a>
+            <a href="https://x.com/almailclub" target="_blank" rel="noopener" class="social-icon-link">
+                <i class="fab fa-x-twitter"></i>
+                <span>@almailclub</span>
+            </a>
+            <a href="https://youtube.com/@almailsportsclub" target="_blank" rel="noopener" class="social-icon-link">
+                <i class="fab fa-youtube"></i>
+                <span>@almailsportsclub</span>
+            </a>
+            <a href="https://tiktok.com/@almail_sc" target="_blank" rel="noopener" class="social-icon-link">
+                <i class="fab fa-tiktok"></i>
+                <span>@almail_sc</span>
+            </a>
         </div>
+
         <div class="footer-bottom">
-            <p>&copy; 2025 Almail Sports Club. All rights reserved. | Bizarri's Stadium</p>
+            <p>&copy; 2026 Almail Sports Club. All rights reserved. &nbsp;&bull;&nbsp; Bizarri's Stadium</p>
         </div>
     </footer>
 

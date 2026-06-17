@@ -1,4 +1,4 @@
-// ── Menu Toggle ───────────────────────────────────────
+// ── Mobile Menu Toggle ────────────────────────────────────
 const menuBtn = document.getElementById('menuBtn');
 const mainNav = document.querySelector('.main-nav');
 
@@ -14,18 +14,21 @@ if (menuBtn && mainNav) {
     });
 }
 
-// ── Secondary Nav Active Link ──────────────────────────
+// ── Secondary Nav Active Link ─────────────────────────────
 const secLinks = document.querySelectorAll('.sec-link');
 
 secLinks.forEach(link => {
     link.addEventListener('click', e => {
-        e.preventDefault();
+        const href = link.getAttribute('href');
+        if (!href || href === '#') {
+            e.preventDefault();
+        }
         secLinks.forEach(l => l.classList.remove('active'));
         link.classList.add('active');
     });
 });
 
-// ── Smooth Scroll ──────────────────────────────────────
+// ── Smooth Scroll ─────────────────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
@@ -33,8 +36,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             const target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
-                const headerHeight = document.querySelector('.main-header').offsetHeight +
-                                    document.querySelector('.secondary-nav').offsetHeight;
+                const headerEl = document.querySelector('.main-header');
+                const secNavEl = document.querySelector('.secondary-nav');
+                const headerHeight = (headerEl ? headerEl.offsetHeight : 0) +
+                                     (secNavEl ? secNavEl.offsetHeight : 0);
                 window.scrollTo({
                     top: target.offsetTop - headerHeight - 20,
                     behavior: 'smooth'
@@ -44,12 +49,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ── Scroll Animations ──────────────────────────────────
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
+// ── Scroll Reveal ────────────────────────────────────────
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -58,30 +58,24 @@ const observer = new IntersectionObserver((entries) => {
             observer.unobserve(entry.target);
         }
     });
-}, observerOptions);
+}, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
 
-document.querySelectorAll(
-    '.news-card, .player-card, .shop-item, .fixture, .info-box'
-).forEach(el => {
+document.querySelectorAll('.news-card, .info-box, .match-app-card').forEach(el => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
     observer.observe(el);
 });
 
-// ── Active Secondary Nav on Scroll ────────────────────
+// ── Active Secondary Nav on Scroll ───────────────────────
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section[id]');
     let current = '';
-
     sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - 200) {
+        if (pageYOffset >= section.offsetTop - 200) {
             current = section.getAttribute('id');
         }
     });
-
     secLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${current}`) {
@@ -90,99 +84,68 @@ window.addEventListener('scroll', () => {
     });
 }, { passive: true });
 
-// ── Match Detail Modal ────────────────────────────────
-const matchDetails = {
-    dumankaya: {
-        title: 'ALMAIL SC vs SHABAB AL HURA',
-        details: {
-            'Competition': 'Dumankaya Cup Final',
-            'Date': 'Friday, August 8, 2025',
-            'Time': '7:55 PM',
-            'Stadium': 'Dumankaya Street Stadium',
-            'Result': 'ALMAIL SC 7 - 4 SHABAB AL HURA'
-        }
-    },
-    'result-1': {
-        title: 'ALMAIL SC vs LOCAL RIVALS',
-        details: {
-            'Competition': 'Friendly Match',
-            'Date': 'Friday, March 15, 2024',
-            'Time': 'TBD',
-            'Stadium': "Bizarri's Stadium",
-            'Result': 'ALMAIL SC 2 - 1 LOCAL RIVALS'
-        }
-    },
-    'result-2': {
-        title: 'CITY UNITED vs ALMAIL SC',
-        details: {
-            'Competition': 'League Match',
-            'Date': 'Friday, March 8, 2024',
-            'Time': 'TBD',
-            'Stadium': 'City United Stadium',
-            'Result': 'CITY UNITED 1 - 1 ALMAIL SC'
-        }
-    },
-    'result-3': {
-        title: 'ALMAIL SC vs RIVALS',
-        details: {
-            'Competition': 'Cup Match',
-            'Date': 'Sunday, December 10, 2023',
-            'Time': 'TBD',
-            'Stadium': "Bizarri's Stadium",
-            'Result': 'ALMAIL SC 3 - 0 RIVALS'
-        }
-    }
-};
+// ── Season Tabs ───────────────────────────────────────────
+document.querySelectorAll('.season-tab').forEach(tab => {
+    tab.addEventListener('click', function () {
+        const season = this.getAttribute('data-season');
 
+        document.querySelectorAll('.season-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.season-panel').forEach(p => p.classList.remove('active'));
+
+        this.classList.add('active');
+        const panel = document.getElementById('season-' + season);
+        if (panel) panel.classList.add('active');
+    });
+});
+
+// ── Match Detail Modal ────────────────────────────────────
 function openMatchDetail(matchId) {
     const modal = document.getElementById('matchModal');
-    const matchData = matchDetails[matchId];
-
-    if (matchData) {
-        document.getElementById('modalTitle').textContent = matchData.title;
-
-        let detailsHTML = '';
-        for (const [key, value] of Object.entries(matchData.details)) {
-            detailsHTML += `
-                <div class="detail-row">
-                    <span class="detail-label">${key}</span>
-                    <span class="detail-value">${value}</span>
-                </div>
-            `;
-        }
-
-        document.getElementById('modalDetails').innerHTML = detailsHTML;
+    if (modal) {
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
+
+        // Reset to first tab
+        document.querySelectorAll('.modal-tab').forEach((t, i) => {
+            t.classList.toggle('active', i === 0);
+        });
+        document.querySelectorAll('.modal-tab-panel').forEach((p, i) => {
+            p.classList.toggle('active', i === 0);
+        });
     }
 }
 
 function closeMatchDetail() {
     const modal = document.getElementById('matchModal');
-    modal.classList.remove('active');
-    document.body.style.overflow = 'auto';
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 }
 
-// Close modal when clicking outside
-document.getElementById('matchModal').addEventListener('click', function(e) {
-    if (e.target === this) {
-        closeMatchDetail();
-    }
+// Close modal on backdrop click
+const matchModal = document.getElementById('matchModal');
+if (matchModal) {
+    matchModal.addEventListener('click', function (e) {
+        if (e.target === this) closeMatchDetail();
+    });
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeMatchDetail();
 });
 
-// ── Season Filter ──────────────────────────────────────
-function filterSeason(season) {
-    const seasonBtns = document.querySelectorAll('.season-btn');
-    seasonBtns.forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
+// ── Modal Tab Switching ───────────────────────────────────
+document.querySelectorAll('.modal-tab').forEach(tab => {
+    tab.addEventListener('click', function () {
+        const tabId = this.getAttribute('data-tab');
 
-    const allFixtures = document.querySelectorAll('.fixture');
-    allFixtures.forEach(fixture => {
-        fixture.style.display = 'none';
-    });
+        document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.modal-tab-panel').forEach(p => p.classList.remove('active'));
 
-    const seasonFixtures = document.querySelectorAll(`.season-${season}`);
-    seasonFixtures.forEach(fixture => {
-        fixture.style.display = 'grid';
+        this.classList.add('active');
+        const panel = document.getElementById('tab-' + tabId);
+        if (panel) panel.classList.add('active');
     });
-}
+});
