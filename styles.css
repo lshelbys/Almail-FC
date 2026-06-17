@@ -112,7 +112,7 @@ img { display: block; max-width: 100%; }
 .club-crest {
     width: 72px;
     height: 72px;
-    background: var(--white);
+    background: transparent;
     border-radius: 4px;
     display: flex;
     align-items: center;
@@ -507,7 +507,7 @@ img { display: block; max-width: 100%; }
 .match-team-crest {
     width: 64px;
     height: 64px;
-    background: var(--white);
+    background: transparent;
     border-radius: 4px;
     display: flex;
     align-items: center;
@@ -716,7 +716,7 @@ img { display: block; max-width: 100%; }
 .modal-crest {
     width: 52px;
     height: 52px;
-    background: var(--white);
+    background: transparent;
     border-radius: 4px;
     display: flex;
     align-items: center;
@@ -733,7 +733,7 @@ img { display: block; max-width: 100%; }
 }
 
 .modal-crest.home {
-    background: var(--white);
+    background: transparent;
 }
 
 .modal-crest.away {
@@ -1006,7 +1006,7 @@ img { display: block; max-width: 100%; }
 .footer-crest {
     width: 44px;
     height: 44px;
-    background: var(--white);
+    background: transparent;
     border-radius: 3px;
     display: flex;
     align-items: center;
