@@ -77,8 +77,8 @@ img { display: block; max-width: 100%; }
 
 .lang-btn {
     background: transparent;
-    border: 1px solid var(--border);
-    color: var(--text-gray);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: rgba(255, 255, 255, 0.7);
     padding: 0.3rem 0.7rem;
     font-size: 0.75rem;
     font-weight: 600;
@@ -88,7 +88,7 @@ img { display: block; max-width: 100%; }
 }
 
 .lang-btn:hover {
-    border-color: var(--accent);
+    border-color: var(--white);
     color: var(--white);
 }
 
@@ -96,6 +96,44 @@ img { display: block; max-width: 100%; }
     background: var(--white);
     color: var(--primary);
     border-color: var(--white);
+}
+
+/* ── BACK TO TOP ─────────────────────────────────────────── */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--white);
+    color: var(--primary);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    z-index: 500;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.back-to-top:hover {
+    transform: translateY(-3px);
+    background: var(--accent-light);
+}
+
+html[dir="rtl"] .back-to-top,
+body.rtl-mode .back-to-top {
+    right: auto;
+    left: 2rem;
 }
 
 .banner-icon {

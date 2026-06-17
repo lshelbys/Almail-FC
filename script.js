@@ -136,6 +136,14 @@ document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeMatchDetail();
 });
 
+// ── Back to Top Button ────────────────────────────────────
+const backToTopBtn = document.getElementById('backToTop');
+if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+        backToTopBtn.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+}
+
 // ── Modal Tab Switching ───────────────────────────────────
 document.querySelectorAll('.modal-tab').forEach(tab => {
     tab.addEventListener('click', function () {
