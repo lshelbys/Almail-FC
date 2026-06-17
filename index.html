@@ -86,8 +86,8 @@
                     </div>
                     <div class="news-body">
                         <span class="news-meta"><span data-i18n="news-date">17 JUN 2026</span> &nbsp;&bull;&nbsp; <span data-i18n="news-category">Club News</span></span>
-                        <h3 data-i18n="news-article-title">Almail SC Renews Amateur Club Status for 2025</h3>
-                        <p data-i18n="news-article-desc">Almail Sports Club is proud to announce the renewal of its amateur club status for the 2025 season, reaffirming our commitment to grassroots football and developing talent in the community.</p>
+                        <h3 data-i18n="news-article-title">Almail SC Renews Amateur Club Status for 2026</h3>
+                        <p data-i18n="news-article-desc">Almail Sports Club is proud to announce the renewal of its amateur club status for the 2026 season, reaffirming our commitment to grassroots football and developing talent in the community.</p>
                         <a href="news-amateur-status.html" class="news-link" data-i18n="news-read-more">READ FULL ARTICLE</a>
                     </div>
                 </article>
@@ -399,6 +399,30 @@
     <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
         <i class="fas fa-chevron-up"></i>
     </button>
+
+    <!-- ── FLOATING MAIN MENU ────────────────────────────── -->
+    <div class="float-menu-wrap" id="floatMenuWrap">
+        <button class="float-menu-btn" id="floatMenuBtn" aria-label="Menu">
+            <i class="fas fa-bars" id="floatMenuIcon"></i>
+        </button>
+        <nav class="float-menu-panel" id="floatMenuPanel">
+            <div class="float-menu-header">
+                <span>MENU</span>
+                <button onclick="closeFloatMenu()"><i class="fas fa-times"></i></button>
+            </div>
+            <ul class="float-menu-links">
+                <li><a href="#latest"  onclick="closeFloatMenu()"><i class="fas fa-newspaper"></i> <span data-i18n="nav-news">NEWS</span></a></li>
+                <li><a href="#matches" onclick="closeFloatMenu()"><i class="fas fa-futbol"></i> <span data-i18n="nav-matches">MATCHES</span></a></li>
+                <li><a href="#teams"   onclick="closeFloatMenu()"><i class="fas fa-users"></i> <span data-i18n="nav-squad">SQUAD</span></a></li>
+                <li><a href="#tickets" onclick="closeFloatMenu()"><i class="fas fa-ticket-alt"></i> <span data-i18n="nav-tickets">TICKETS</span></a></li>
+                <li><a href="#shop"    onclick="closeFloatMenu()"><i class="fas fa-shopping-bag"></i> <span data-i18n="nav-shop">SHOP</span></a></li>
+                <li><a href="#support" onclick="closeFloatMenu()"><i class="fas fa-info-circle"></i> <span data-i18n="nav-club">CLUB</span></a></li>
+            </ul>
+            <button class="float-menu-top" onclick="window.scrollTo({top:0,behavior:'smooth'}); closeFloatMenu()">
+                <i class="fas fa-arrow-up"></i> <span data-i18n="back-to-top-label">BACK TO TOP</span>
+            </button>
+        </nav>
+    </div>
 
     <script src="translations.js"></script>
     <script src="script.js"></script>

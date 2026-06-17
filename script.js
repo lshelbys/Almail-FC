@@ -144,6 +144,32 @@ if (backToTopBtn) {
     }, { passive: true });
 }
 
+// ── Floating Main Menu ────────────────────────────────────
+const floatMenuBtn = document.getElementById('floatMenuBtn');
+const floatMenuPanel = document.getElementById('floatMenuPanel');
+
+function closeFloatMenu() {
+    if (floatMenuPanel) floatMenuPanel.classList.remove('open');
+}
+
+if (floatMenuBtn && floatMenuPanel) {
+    floatMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        floatMenuPanel.classList.toggle('open');
+    });
+
+    document.addEventListener('click', (e) => {
+        const wrap = document.getElementById('floatMenuWrap');
+        if (wrap && !wrap.contains(e.target)) {
+            closeFloatMenu();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeFloatMenu();
+    });
+}
+
 // ── Modal Tab Switching ───────────────────────────────────
 document.querySelectorAll('.modal-tab').forEach(tab => {
     tab.addEventListener('click', function () {

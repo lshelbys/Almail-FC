@@ -27,8 +27,8 @@ const translations = {
         // News Section
         'news-title': 'LATEST NEWS',
         'news-category': 'CLUB NEWS',
-        'news-article-title': 'Almail SC Renews Amateur Club Status for 2025',
-        'news-article-desc': 'Almail Sports Club is proud to announce the renewal of its amateur club status for the 2025 season, reaffirming our commitment to grassroots football and developing talent in the community.',
+        'news-article-title': 'Almail SC Renews Amateur Club Status for 2026',
+        'news-article-desc': 'Almail Sports Club is proud to announce the renewal of its amateur club status for the 2026 season, reaffirming our commitment to grassroots football and developing talent in the community.',
         'news-read-more': 'READ FULL ARTICLE',
         'news-date': '17 JUN 2026',
 
@@ -105,7 +105,8 @@ const translations = {
         'footer-first-team': 'First Team',
         'footer-fixtures': 'Fixtures',
         'footer-follow-us': 'FOLLOW US',
-        'footer-copyright': '© 2026 Almail Sports Club. All rights reserved. • Bizarri\'s Stadium',
+        'footer-copyright': '© 2026 Almail Sports Club. All rights reserved. • Bizarri's Stadium',
+        'back-to-top-label': 'BACK TO TOP',
     },
     ar: {
         // Promo Banner
@@ -135,8 +136,8 @@ const translations = {
         // News Section
         'news-title': 'أحدث الأخبار',
         'news-category': 'أخبار النادي',
-        'news-article-title': 'نادي الميل ينجدد حالته كنادي هاوي لعام 2025',
-        'news-article-desc': 'يفخر نادي الميل الرياضي بإعلان تجديد حالته كنادي هاوي للموسم 2025، مؤكداً التزامنا بكرة القدم الشعبية وتطوير المواهب في المجتمع.',
+        'news-article-title': 'نادي الميل يجدد حالته كنادي هاوي لعام 2026',
+        'news-article-desc': 'يفخر نادي الميل الرياضي بإعلان تجديد حالته كنادي هاوي للموسم 2026، مؤكداً التزامنا بكرة القدم الشعبية وتطوير المواهب في المجتمع.',
         'news-read-more': 'اقرأ المقال الكامل',
         'news-date': '17 يونيو 2026',
 
@@ -214,7 +215,8 @@ const translations = {
         'footer-fixtures': 'الجدول',
         'footer-follow-us': 'تابعنا',
         'footer-copyright': '© 2026 نادي الميل الرياضي. جميع الحقوق محفوظة. • ملعب بيزاري',
-    }
+        'footer-copyright': '© 2026 نادي الميل الرياضي. جميع الحقوق محفوظة. • ملعب بيزاري',
+        'back-to-top-label': 'أعلى الصفحة',
 };
 
 let currentLanguage = 'en';

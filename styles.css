@@ -1402,3 +1402,159 @@ html[dir="rtl"] .hero-buttons,
 body.rtl-mode .hero-buttons {
     flex-direction: row-reverse;
 }
+
+/* ── FLOATING MAIN MENU ──────────────────────────────────── */
+.float-menu-wrap {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 600;
+}
+
+.float-menu-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    border: 1px solid var(--border-light);
+    color: var(--white);
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+}
+
+.float-menu-btn:hover {
+    background: var(--border-light);
+    transform: scale(1.06);
+}
+
+.float-menu-panel {
+    position: absolute;
+    bottom: 64px;
+    left: 0;
+    background: var(--primary-dark);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    width: 220px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+}
+
+.float-menu-panel.open {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+}
+
+.float-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 1.2rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--text-gray);
+}
+
+.float-menu-header button {
+    color: var(--text-gray);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.float-menu-header button:hover { color: var(--white); }
+
+.float-menu-links {
+    padding: 0.5rem 0;
+}
+
+.float-menu-links li a {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.75rem 1.2rem;
+    color: var(--text-gray);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.float-menu-links li a:hover {
+    color: var(--white);
+    background: var(--primary-light);
+    padding-left: 1.5rem;
+}
+
+.float-menu-links i {
+    width: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.float-menu-top {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    border-top: 1px solid var(--border);
+    color: var(--white);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    transition: background 0.2s;
+    text-align: left;
+}
+
+.float-menu-top:hover { background: var(--primary-light); }
+
+/* RTL float menu */
+html[dir="rtl"] .float-menu-wrap,
+body.rtl-mode .float-menu-wrap {
+    left: auto;
+    right: 2rem;
+}
+
+html[dir="rtl"] .float-menu-panel,
+body.rtl-mode .float-menu-panel {
+    left: auto;
+    right: 0;
+}
+
+html[dir="rtl"] .float-menu-links li a,
+body.rtl-mode .float-menu-links li a {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .float-menu-links li a:hover,
+body.rtl-mode .float-menu-links li a:hover {
+    padding-left: 1.2rem;
+    padding-right: 1.5rem;
+}
+
+html[dir="rtl"] .float-menu-top,
+body.rtl-mode .float-menu-top {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+/* ── X / TWITTER ICON FORCE WHITE ────────────────────────── */
+.footer-socials .social-icon-link i.fa-x-twitter,
+.footer-cols .social-list a i.fa-x-twitter,
+.article-social-share a i.fa-x-twitter,
+.sidebar-social a i.fa-x-twitter {
+    color: var(--white) !important;
+    -webkit-text-fill-color: var(--white) !important;
+}
