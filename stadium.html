@@ -13,15 +13,14 @@
     <!-- ── PROMO BANNER ──────────────────────────────────── -->
     <div class="promo-banner">
         <div class="banner-content">
-            <span class="banner-text">Professional Amateur Football Club — Established 2020</span>
+            <span class="banner-text" data-i18n="promo-text">Professional Amateur Football Club — Established 2021</span>
         </div>
         <div class="banner-right">
-            <a href="mailto:almailclub@gmail.com" class="banner-icon"><i class="fas fa-envelope"></i> Contact</a>
-            <select class="banner-lang">
-                <option>EN</option>
-                <option>ES</option>
-                <option>FR</option>
-            </select>
+            <a href="mailto:almailclub@gmail.com" class="banner-icon"><i class="fas fa-envelope"></i> <span data-i18n="banner-contact">Contact</span></a>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
+                <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar')">AR</button>
+            </div>
         </div>
     </div>
 
@@ -245,6 +244,7 @@
         </div>
     </footer>
 
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
