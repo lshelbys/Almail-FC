@@ -4,12 +4,12 @@ const mainNav = document.querySelector('.main-nav');
 
 if (menuBtn && mainNav) {
     menuBtn.addEventListener('click', () => {
-        mainNav.style.display = mainNav.style.display === 'flex' ? 'none' : 'flex';
+        mainNav.classList.toggle('open');
     });
 
     document.addEventListener('click', e => {
         if (!menuBtn.contains(e.target) && !mainNav.contains(e.target)) {
-            mainNav.style.display = 'none';
+            mainNav.classList.remove('open');
         }
     });
 }
