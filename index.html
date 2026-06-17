@@ -248,9 +248,39 @@
             </div>
 
             <div class="modal-tab-panel" id="tab-lineup">
-                <div class="coming-soon-tab">
-                    <i class="fas fa-users"></i>
-                    <p>Line-up details coming soon.</p>
+                <div class="lineup-section">
+                    <div class="lineup-team-header">
+                        <div class="lineup-team-crest-sm">
+                            <img src="logo.png" alt="Almail SC" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="crest-fallback-sm">ASC</span>
+                        </div>
+                        <span class="lineup-team-label">ALMAIL SC</span>
+                    </div>
+                    <ul class="lineup-list">
+                        <li class="lineup-player">
+                            <button class="lineup-player-btn" onclick="togglePlayerDetail(this)">
+                                <span class="lineup-pos-badge">LW</span>
+                                <span class="lineup-player-name">Tayem Eyad</span>
+                                <i class="fas fa-chevron-down lineup-chevron"></i>
+                            </button>
+                            <div class="lineup-player-detail">
+                                <div class="player-detail-grid">
+                                    <div class="player-detail-item">
+                                        <span class="player-detail-label">Position</span>
+                                        <span class="player-detail-value">Left Winger</span>
+                                    </div>
+                                    <div class="player-detail-item">
+                                        <span class="player-detail-label">Nationality</span>
+                                        <span class="player-detail-value">Palestinian</span>
+                                    </div>
+                                    <div class="player-detail-item">
+                                        <span class="player-detail-label">Date of Birth</span>
+                                        <span class="player-detail-value">2011 / 2012</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
 

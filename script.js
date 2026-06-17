@@ -170,6 +170,14 @@ if (floatMenuBtn && floatMenuPanel) {
     });
 }
 
+// ── Lineup Player Detail Toggle ──────────────────────────
+function togglePlayerDetail(btn) {
+    const detail = btn.nextElementSibling;
+    const isOpen = detail.classList.contains('open');
+    btn.classList.toggle('open', !isOpen);
+    detail.classList.toggle('open', !isOpen);
+}
+
 // ── Modal Tab Switching ───────────────────────────────────
 document.querySelectorAll('.modal-tab').forEach(tab => {
     tab.addEventListener('click', function () {
