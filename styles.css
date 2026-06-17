@@ -804,8 +804,8 @@ body.rtl-mode .back-to-top {
 }
 
 .modal-crest.away {
-    background: var(--primary);
-    border: 1px solid var(--border-light);
+    background: transparent;
+    border: none;
     color: var(--text-gray);
 }
 
@@ -1002,6 +1002,70 @@ body.rtl-mode .back-to-top {
 
 @media (max-width: 480px) {
     .player-detail-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── GOALS TIMELINE ─────────────────────────────────────────── */
+.goals-timeline {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 0.5rem 0;
+}
+
+.goals-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.goal-item {
+    display: grid;
+    grid-template-columns: auto auto auto 1fr;
+    grid-template-rows: auto auto;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.almail-goals .goal-item {
+    grid-template-columns: auto auto auto 1fr;
+}
+
+.shabab-goals .goal-item {
+    grid-template-columns: 1fr auto auto auto;
+    direction: rtl;
+}
+
+.goal-minute {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-gray);
+    text-align: center;
+}
+
+.goal-icon {
+    font-size: 0.5rem;
+    color: var(--accent-light);
+}
+
+.goal-score {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--white);
+    text-align: center;
+}
+
+.goal-player {
+    font-size: 0.85rem;
+    color: var(--white);
+    text-align: left;
+}
+
+.shabab-goals .goal-player { text-align: right; }
+
+@media (max-width: 768px) {
+    .goals-timeline { grid-template-columns: 1fr; }
 }
 
 /* ── SQUAD SECTION ──────────────────────────────────────────– */
