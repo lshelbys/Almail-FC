@@ -44,12 +44,7 @@ img { display: block; max-width: 100%; }
     display: flex;
     gap: 0.4rem;
     align-items: center;
-}
-
-.nav-lang {
-    margin-left: 0.5rem;
-    border-left: 1px solid var(--border);
-    padding-left: 1rem;
+    margin-right: 0.75rem;
 }
 
 .lang-btn {
