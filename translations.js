@@ -105,7 +105,7 @@ const translations = {
         'footer-first-team': 'First Team',
         'footer-fixtures': 'Fixtures',
         'footer-follow-us': 'FOLLOW US',
-        'footer-copyright': '© 2026 Almail Sports Club. All rights reserved. • Bizarri's Stadium',
+        'footer-copyright': "© 2026 Almail Sports Club. All rights reserved. • Bizarri's Stadium",
         'back-to-top-label': 'BACK TO TOP',
     },
     ar: {
@@ -215,8 +215,8 @@ const translations = {
         'footer-fixtures': 'الجدول',
         'footer-follow-us': 'تابعنا',
         'footer-copyright': '© 2026 نادي الميل الرياضي. جميع الحقوق محفوظة. • ملعب بيزاري',
-        'footer-copyright': '© 2026 نادي الميل الرياضي. جميع الحقوق محفوظة. • ملعب بيزاري',
         'back-to-top-label': 'أعلى الصفحة',
+    }
 };
 
 let currentLanguage = 'en';
