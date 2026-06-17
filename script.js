@@ -1,26 +1,31 @@
-// ── MORE / hamburger button ───────────────────────────
-const moreBtn = document.getElementById('moreBtn');
-const mainNav = document.getElementById('mainNav');
+// ── Menu Toggle ───────────────────────────────────────
+const menuBtn = document.getElementById('menuBtn');
+const mainNav = document.querySelector('.main-nav');
 
-if (moreBtn && mainNav) {
-    moreBtn.addEventListener('click', () => {
-        mainNav.classList.toggle('open');
+if (menuBtn && mainNav) {
+    menuBtn.addEventListener('click', () => {
+        mainNav.style.display = mainNav.style.display === 'flex' ? 'none' : 'flex';
     });
 
-    // Close on outside click
     document.addEventListener('click', e => {
-        if (!moreBtn.contains(e.target) && !mainNav.contains(e.target)) {
-            mainNav.classList.remove('open');
+        if (!menuBtn.contains(e.target) && !mainNav.contains(e.target)) {
+            mainNav.style.display = 'none';
         }
-    });
-
-    // Close when nav link is clicked
-    mainNav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => mainNav.classList.remove('open'));
     });
 }
 
-// ── Smooth scroll ─────────────────────────────────────
+// ── Secondary Nav Active Link ──────────────────────────
+const secLinks = document.querySelectorAll('.sec-link');
+
+secLinks.forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        secLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+    });
+});
+
+// ── Smooth Scroll ──────────────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
@@ -28,43 +33,59 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             const target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
-                const offset = document.querySelector('.navbar').offsetHeight;
-                window.scrollTo({ top: target.offsetTop - offset - 8, behavior: 'smooth' });
+                const headerHeight = document.querySelector('.main-header').offsetHeight +
+                                    document.querySelector('.secondary-nav').offsetHeight;
+                window.scrollTo({
+                    top: target.offsetTop - headerHeight - 20,
+                    behavior: 'smooth'
+                });
             }
         }
     });
 });
 
-// ── Active nav link on scroll ─────────────────────────
-const sections = document.querySelectorAll('section[id], header[id]');
-const navItems = document.querySelectorAll('.nav-item');
-
-const activateNav = () => {
-    let current = '';
-    sections.forEach(s => {
-        if (window.scrollY >= s.offsetTop - 120) current = s.id;
-    });
-    navItems.forEach(a => {
-        a.classList.remove('active');
-        if (a.getAttribute('href') === `#${current}`) a.classList.add('active');
-    });
+// ── Scroll Animations ──────────────────────────────────
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
 };
 
-window.addEventListener('scroll', activateNav, { passive: true });
-
-// ── Reveal on scroll ──────────────────────────────────
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-        if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            observer.unobserve(e.target);
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
         }
     });
-}, { threshold: 0.08 });
+}, observerOptions);
 
 document.querySelectorAll(
-    '.article-card, .squad-player, .shop-item, .fixture-row, .news-thumb'
+    '.news-card, .player-card, .shop-item, .fixture, .info-box'
 ).forEach(el => {
-    el.classList.add('fade-up');
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     observer.observe(el);
 });
+
+// ── Active Secondary Nav on Scroll ────────────────────
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section[id]');
+    let current = '';
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    secLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+}, { passive: true });

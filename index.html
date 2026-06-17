@@ -3,393 +3,375 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Almail FC – Official Website</title>
+    <title>Almail Sports Club – Official Website</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- ── TOP UTILITY BAR ──────────────────────────── -->
-    <div class="topbar">
-        <div class="topbar-inner">
-            <nav class="topbar-left">
-                <a href="#">VENUES</a>
-                <a href="#">ALMAIL FOUNDATION</a>
-            </nav>
-            <div class="topbar-right">
-                <a href="#" class="topbar-auth">LOGIN</a>
-                <a href="#" class="topbar-auth">REGISTER</a>
-            </div>
+    <!-- ── PROMO BANNER ──────────────────────────────── -->
+    <div class="promo-banner">
+        <div class="banner-content">
+            <span class="banner-text">Season Ticket Memberships now available.</span>
+            <a href="#" class="banner-link">SHOP NOW</a>
+        </div>
+        <div class="banner-right">
+            <a href="#login" class="banner-icon"><i class="fas fa-user-circle"></i> Login</a>
+            <a href="#" class="banner-cta">BECOME A MEMBER</a>
+            <select class="banner-lang">
+                <option>EN</option>
+                <option>ES</option>
+                <option>FR</option>
+            </select>
+            <a href="#" class="banner-icon"><i class="fas fa-globe"></i></a>
         </div>
     </div>
 
-    <!-- ── MAIN NAVBAR ──────────────────────────────── -->
-    <header class="navbar">
-        <div class="navbar-inner">
-            <a href="#" class="navbar-logo">
-                <div class="crest">
-                    <span class="crest-top">ALMAIL</span>
-                    <div class="crest-lion">⚽</div>
-                    <span class="crest-bottom">F.C.</span>
+    <!-- ── MAIN HEADER ───────────────────────────────── -->
+    <header class="main-header">
+        <div class="header-inner">
+            <a href="#" class="club-logo">
+                <div class="club-crest">
+                    <span class="crest-text">ASC</span>
                 </div>
             </a>
-
-            <nav class="navbar-nav" id="mainNav">
-                <a href="#latest" class="nav-item active">LATEST</a>
-                <a href="#" class="nav-item has-arrow">&#9654; WATCH</a>
-                <a href="#team" class="nav-item">MEN'S TEAM</a>
-                <a href="#" class="nav-item">WOMEN'S TEAM</a>
-                <a href="#tickets" class="nav-item">TICKETS &amp; HOSPITALITY</a>
-                <a href="#" class="nav-item">SHOP</a>
-                <button class="nav-search"><i class="fas fa-search"></i></button>
+            <nav class="main-nav" id="mainNav">
+                <a href="#news" class="nav-link">NEWS</a>
+                <a href="#watch" class="nav-link">WATCH</a>
+                <a href="#teams" class="nav-link dropdown-trigger">TEAMS <i class="fas fa-chevron-down"></i>
+                    <div class="dropdown">
+                        <a href="#">Men's First Team</a>
+                        <a href="#">Women's Team</a>
+                        <a href="#">Youth Academy</a>
+                        <a href="#">Reserves</a>
+                    </div>
+                </a>
+                <a href="#matches" class="nav-link">MATCHES</a>
+                <a href="#tickets" class="nav-link">TICKETS & MEMBERSHIP</a>
+                <a href="#shop" class="nav-link">SHOP</a>
+                <a href="#support" class="nav-link">SUPPORT</a>
             </nav>
-
-            <button class="navbar-more" id="moreBtn">
-                <i class="fas fa-bars"></i>
-                <span>MORE</span>
-            </button>
+            <div class="header-right">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+                <button class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button>
+            </div>
         </div>
     </header>
 
-    <!-- ── HERO NEWS GRID ───────────────────────────── -->
-    <main class="site-main">
-        <section id="latest" class="news-hero">
-            <div class="news-hero-inner">
+    <!-- ── SECONDARY NAV ────────────────────────────── -->
+    <nav class="secondary-nav">
+        <div class="secondary-inner">
+            <a href="#latest" class="sec-link active">Latest</a>
+            <a href="#" class="sec-link">Results</a>
+            <a href="#" class="sec-link">Schedule</a>
+            <a href="#" class="sec-link">Club News</a>
+            <a href="#" class="sec-link">Community</a>
+            <a href="#" class="sec-link">History</a>
+            <a href="#" class="sec-link">Foundation</a>
+            <a href="#" class="sec-link">Documentation</a>
+            <button class="sec-more">MORE <i class="fas fa-chevron-down"></i></button>
+        </div>
+    </nav>
 
-                <!-- Featured large card -->
-                <article class="card card-feature" tabindex="0">
-                    <div class="card-img card-img-1">
-                        <div class="card-overlay"></div>
-                        <div class="card-body">
-                            <span class="card-label">MATCH REPORT</span>
-                            <h2 class="card-title">Almail FC secure stunning comeback victory against City Rivals</h2>
-                        </div>
+    <!-- ── HERO SECTION ──────────────────────────────── -->
+    <section class="hero">
+        <div class="hero-bg">
+            <video autoplay muted loop class="hero-video">
+                <source src="" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">ALMAIL SPORTS CLUB</h1>
+            <p class="hero-subtitle">Excellence in Every Competition</p>
+            <div class="hero-buttons">
+                <a href="#tickets" class="hero-btn btn-primary">GET TICKETS</a>
+                <a href="#" class="hero-btn btn-secondary">WATCH LIVE</a>
+            </div>
+        </div>
+        <div class="hero-badge">
+            <span class="badge-label">SUPPORTERS</span>
+            <span class="badge-number">50K+</span>
+        </div>
+    </section>
+
+    <!-- ── NEXT MATCH ────────────────────────────────── -->
+    <section id="matches" class="next-match-section">
+        <div class="match-container">
+            <h2>NEXT MATCH</h2>
+            <div class="match-card">
+                <div class="match-info">
+                    <div class="competition">PREMIER LEAGUE</div>
+                    <div class="match-date">SAT 22 JUN 2026 • 3:00 PM</div>
+                </div>
+                <div class="match-teams">
+                    <div class="team home">
+                        <div class="team-crest">A</div>
+                        <h3>ALMAIL FC</h3>
+                        <span>Home</span>
                     </div>
-                    <div class="card-thumbs">
-                        <a href="#" class="thumb-link">
-                            <img class="thumb-img thumb-img-1" alt="Fans celebrate">
-                            <span>'It was the perfect response from the team – the fans were incredible'</span>
-                        </a>
-                        <a href="#" class="thumb-link">
-                            <img class="thumb-img thumb-img-2" alt="Captain scores">
-                            <span>Captain Leadership: 'We knew we could turn it around'</span>
-                        </a>
-                        <a href="#" class="thumb-link">
-                            <img class="thumb-img thumb-img-3" alt="Press conference">
-                            <span>Manager's post-match press conference in full</span>
-                        </a>
-                        <a href="#" class="thumb-link">
-                            <img class="thumb-img thumb-img-4" alt="Stats">
-                            <span>Almail FC 3-1 City Rivals: Match stats and ratings</span>
-                        </a>
+                    <div class="vs">VS</div>
+                    <div class="team away">
+                        <div class="team-crest alt">U</div>
+                        <h3>UNITED FC</h3>
+                        <span>Away</span>
+                    </div>
+                </div>
+                <div class="match-cta">
+                    <a href="#" class="btn-match">BUY TICKETS</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── LATEST NEWS GRID ──────────────────────────── -->
+    <section id="latest" class="news-section">
+        <div class="section-container">
+            <h2 class="section-title">LATEST NEWS</h2>
+            <div class="news-grid">
+                <article class="news-card featured">
+                    <div class="news-img news-img-1"></div>
+                    <div class="news-body">
+                        <span class="news-category">MATCH REPORT</span>
+                        <h3>Almail FC Secure Stunning Victory in Derby</h3>
+                        <p>A dominant performance sees Almail FC defeat their rivals 3-1 in front of a packed stadium.</p>
+                        <a href="#" class="news-link">READ MORE →</a>
                     </div>
                 </article>
-
-                <!-- Right column – two stacked cards -->
-                <aside class="cards-side">
-                    <article class="card card-side" tabindex="0">
-                        <div class="card-img card-img-2">
-                            <div class="card-overlay"></div>
-                            <div class="card-body">
-                                <span class="card-label">ARTICLE</span>
-                                <h3 class="card-title-sm">Striker Elite added to national squad for World Cup qualifiers</h3>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="card card-side" tabindex="0">
-                        <div class="card-img card-img-3">
-                            <div class="card-overlay"></div>
-                            <div class="card-body">
-                                <span class="card-label">ARTICLE</span>
-                                <h3 class="card-title-sm">2026 season preview: What to expect from Almail FC</h3>
-                            </div>
-                        </div>
-                    </article>
-                </aside>
+                <article class="news-card">
+                    <div class="news-img news-img-2"></div>
+                    <div class="news-body">
+                        <span class="news-category">INTERVIEW</span>
+                        <h3>Captain Leadership Exclusive Interview</h3>
+                        <p>Our captain discusses the season ahead and his ambitions for the club.</p>
+                        <a href="#" class="news-link">READ MORE →</a>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <div class="news-img news-img-3"></div>
+                    <div class="news-body">
+                        <span class="news-category">ACADEMY</span>
+                        <h3>Youth Academy Graduates Sign Professional Contracts</h3>
+                        <p>Five promising young talents commit their futures to Almail Sports Club.</p>
+                        <a href="#" class="news-link">READ MORE →</a>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <div class="news-img news-img-4"></div>
+                    <div class="news-body">
+                        <span class="news-category">FACILITIES</span>
+                        <h3>New Training Complex Opens</h3>
+                        <p>State-of-the-art facility provides players with world-class training environment.</p>
+                        <a href="#" class="news-link">READ MORE →</a>
+                    </div>
+                </article>
             </div>
+        </div>
+    </section>
 
-            <!-- Bottom row thumbnails -->
-            <div class="news-thumbs-row">
-                <a href="#" class="news-thumb">
-                    <div class="news-thumb-img news-thumb-img-1"></div>
-                    <p>'It encapsulated everything about this club – the heart, the passion'</p>
-                </a>
-                <a href="#" class="news-thumb news-thumb-active">
-                    <div class="news-thumb-img news-thumb-img-2"></div>
-                    <p>Winger Swift: 'The fans gave us the energy to keep going'</p>
-                </a>
-                <a href="#" class="news-thumb">
-                    <div class="news-thumb-img news-thumb-img-3"></div>
-                    <p>Midfield Master departs Almail FC after five seasons</p>
-                </a>
-                <a href="#" class="news-thumb">
-                    <div class="news-thumb-img news-thumb-img-4"></div>
-                    <p>Almail FC supporters celebrate historic Father's Day at the stadium</p>
-                </a>
-            </div>
-        </section>
-
-        <!-- ── LATEST NEWS SECTION ───────────────────── -->
-        <section class="section-blue">
-            <div class="section-inner">
-                <div class="section-heading">
-                    <h2>LATEST NEWS</h2>
-                    <a href="#" class="view-all">VIEW ALL <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="articles-grid">
-                    <article class="article-card">
-                        <div class="article-img article-img-1"></div>
-                        <div class="article-body">
-                            <span class="article-label">MATCH REPORT</span>
-                            <h3>Almail FC 3-1 City Rivals: Full time report</h3>
-                            <p>A stunning second-half comeback saw Almail FC claim all three points in a thrilling derby.</p>
-                        </div>
-                    </article>
-                    <article class="article-card">
-                        <div class="article-img article-img-2"></div>
-                        <div class="article-body">
-                            <span class="article-label">ACADEMY</span>
-                            <h3>Five youth academy graduates join the first team squad</h3>
-                            <p>Our youth academy continues to produce top talent ready for the first team stage.</p>
-                        </div>
-                    </article>
-                    <article class="article-card">
-                        <div class="article-img article-img-3"></div>
-                        <div class="article-body">
-                            <span class="article-label">FACILITIES</span>
-                            <h3>New Almail Stadium development officially announced</h3>
-                            <p>A state-of-the-art 40,000 seat stadium will be the club's new home from 2028.</p>
-                        </div>
-                    </article>
-                    <article class="article-card">
-                        <div class="article-img article-img-4"></div>
-                        <div class="article-body">
-                            <span class="article-label">INTERVIEW</span>
-                            <h3>Striker Elite: 'This team is hungry and we want trophies'</h3>
-                            <p>Our leading scorer sits down for an exclusive interview ahead of the new season.</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- ── NEXT MATCH ────────────────────────────── -->
-        <section id="tickets" class="section-white">
-            <div class="section-inner">
-                <div class="section-heading dark">
-                    <h2>NEXT MATCH</h2>
-                    <a href="#" class="view-all dark">VIEW ALL FIXTURES <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="match-banner">
-                    <div class="match-league">
-                        <span>PREMIER LEAGUE</span>
-                    </div>
-                    <div class="match-teams-row">
-                        <div class="match-club home">
-                            <div class="match-crest match-crest-home">AFC</div>
-                            <strong>ALMAIL FC</strong>
-                            <span>Home</span>
-                        </div>
-                        <div class="match-center">
-                            <div class="match-vs">VS</div>
-                            <div class="match-date-info">
-                                <span class="match-date">SAT 22 JUN 2026</span>
-                                <span class="match-time">3:00 PM</span>
-                            </div>
-                        </div>
-                        <div class="match-club away">
-                            <div class="match-crest match-crest-away">U</div>
-                            <strong>UNITED FC</strong>
-                            <span>Away</span>
-                        </div>
-                    </div>
-                    <div class="match-actions">
-                        <a href="#" class="btn-blue">BUY TICKETS</a>
-                        <a href="#" class="btn-outline-blue">MATCH PREVIEW</a>
+    <!-- ── TEAMS SECTION ────────────────────────────── -->
+    <section id="teams" class="teams-section">
+        <div class="section-container">
+            <h2 class="section-title">MEN'S FIRST TEAM</h2>
+            <div class="players-grid">
+                <div class="player-card">
+                    <div class="player-img player-1"></div>
+                    <div class="player-info">
+                        <span class="player-num">9</span>
+                        <h4>Striker Elite</h4>
+                        <p>Forward</p>
                     </div>
                 </div>
-
-                <!-- Fixtures list -->
-                <div class="fixtures-table">
-                    <div class="fixture-row">
-                        <span class="fx-comp">PREMIER LEAGUE</span>
-                        <span class="fx-date">22 Jun</span>
-                        <span class="fx-home">ALMAIL FC</span>
-                        <span class="fx-score upcoming">VS</span>
-                        <span class="fx-away">UNITED FC</span>
-                        <a href="#" class="fx-ticket">Tickets</a>
+                <div class="player-card">
+                    <div class="player-img player-2"></div>
+                    <div class="player-info">
+                        <span class="player-num">7</span>
+                        <h4>Midfield Master</h4>
+                        <p>Midfielder</p>
                     </div>
-                    <div class="fixture-row">
-                        <span class="fx-comp">PREMIER LEAGUE</span>
-                        <span class="fx-date">27 Jun</span>
-                        <span class="fx-home">CITY RIVALS</span>
-                        <span class="fx-score upcoming">VS</span>
-                        <span class="fx-away">ALMAIL FC</span>
-                        <a href="#" class="fx-ticket">Tickets</a>
+                </div>
+                <div class="player-card">
+                    <div class="player-img player-3"></div>
+                    <div class="player-info">
+                        <span class="player-num">1</span>
+                        <h4>Captain Leadership</h4>
+                        <p>Defender</p>
                     </div>
-                    <div class="fixture-row result">
-                        <span class="fx-comp">PREMIER LEAGUE</span>
-                        <span class="fx-date">15 Jun</span>
-                        <span class="fx-home">ALMAIL FC</span>
-                        <span class="fx-score win">3–1</span>
-                        <span class="fx-away">CITY RIVALS</span>
-                        <a href="#" class="fx-ticket">Report</a>
+                </div>
+                <div class="player-card">
+                    <div class="player-img player-4"></div>
+                    <div class="player-info">
+                        <span class="player-num">23</span>
+                        <h4>Goalkeeper Pro</h4>
+                        <p>Goalkeeper</p>
                     </div>
-                    <div class="fixture-row result">
-                        <span class="fx-comp">PREMIER LEAGUE</span>
-                        <span class="fx-date">10 Jun</span>
-                        <span class="fx-home">STARS FC</span>
-                        <span class="fx-score draw">2–2</span>
-                        <span class="fx-away">ALMAIL FC</span>
-                        <a href="#" class="fx-ticket">Report</a>
+                </div>
+                <div class="player-card">
+                    <div class="player-img player-5"></div>
+                    <div class="player-info">
+                        <span class="player-num">11</span>
+                        <h4>Winger Swift</h4>
+                        <p>Winger</p>
+                    </div>
+                </div>
+                <div class="player-card">
+                    <div class="player-img player-6"></div>
+                    <div class="player-info">
+                        <span class="player-num">4</span>
+                        <h4>Defender Strong</h4>
+                        <p>Defender</p>
                     </div>
                 </div>
             </div>
-        </section>
+            <div class="section-cta">
+                <a href="#" class="btn-view-all">VIEW FULL SQUAD</a>
+            </div>
+        </div>
+    </section>
 
-        <!-- ── MEN'S TEAM ────────────────────────────── -->
-        <section id="team" class="section-blue">
-            <div class="section-inner">
-                <div class="section-heading">
-                    <h2>MEN'S TEAM</h2>
-                    <a href="#" class="view-all">VIEW FULL SQUAD <i class="fas fa-arrow-right"></i></a>
+    <!-- ── MATCHES / FIXTURES ────────────────────────── -->
+    <section class="fixtures-section">
+        <div class="section-container">
+            <h2 class="section-title">FIXTURES & RESULTS</h2>
+            <div class="fixtures-list">
+                <div class="fixture upcoming">
+                    <span class="fx-date">22 JUN</span>
+                    <span class="fx-comp">PREMIER LEAGUE</span>
+                    <span class="fx-teams">ALMAIL FC vs UNITED FC</span>
+                    <span class="fx-status">UPCOMING</span>
                 </div>
-                <div class="squad-row">
-                    <div class="squad-player">
-                        <div class="squad-img squad-img-1"></div>
-                        <div class="squad-info">
-                            <span class="squad-num">9</span>
-                            <span class="squad-name">Striker Elite</span>
-                            <span class="squad-pos">Forward</span>
-                        </div>
+                <div class="fixture upcoming">
+                    <span class="fx-date">27 JUN</span>
+                    <span class="fx-comp">PREMIER LEAGUE</span>
+                    <span class="fx-teams">CITY RIVALS vs ALMAIL FC</span>
+                    <span class="fx-status">UPCOMING</span>
+                </div>
+                <div class="fixture result">
+                    <span class="fx-date">15 JUN</span>
+                    <span class="fx-comp">PREMIER LEAGUE</span>
+                    <span class="fx-teams">ALMAIL FC vs CITY RIVALS</span>
+                    <span class="fx-status result-score">3-1</span>
+                </div>
+                <div class="fixture result">
+                    <span class="fx-date">10 JUN</span>
+                    <span class="fx-comp">PREMIER LEAGUE</span>
+                    <span class="fx-teams">STARS FC vs ALMAIL FC</span>
+                    <span class="fx-status result-score">2-2</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── TICKETS SECTION ───────────────────────────── -->
+    <section id="tickets" class="tickets-section">
+        <div class="section-container">
+            <h2 class="section-title">TICKETS & MEMBERSHIP</h2>
+            <div class="tickets-content">
+                <div class="tickets-text">
+                    <h3>Join the Almail Family</h3>
+                    <p>Experience matchday at our iconic stadium. Become a season ticket holder and be part of the action every week.</p>
+                    <div class="tickets-buttons">
+                        <a href="#" class="btn-primary">BUY SINGLE TICKETS</a>
+                        <a href="#" class="btn-secondary">SEASON PASSES</a>
                     </div>
-                    <div class="squad-player">
-                        <div class="squad-img squad-img-2"></div>
-                        <div class="squad-info">
-                            <span class="squad-num">7</span>
-                            <span class="squad-name">Midfield Master</span>
-                            <span class="squad-pos">Midfielder</span>
-                        </div>
+                </div>
+                <div class="tickets-info">
+                    <div class="info-card">
+                        <i class="fas fa-users"></i>
+                        <h4>50,000+ Supporters</h4>
+                        <p>Join our passionate fan base</p>
                     </div>
-                    <div class="squad-player">
-                        <div class="squad-img squad-img-3"></div>
-                        <div class="squad-info">
-                            <span class="squad-num">1</span>
-                            <span class="squad-name">Captain Leadership</span>
-                            <span class="squad-pos">Defender</span>
-                        </div>
-                    </div>
-                    <div class="squad-player">
-                        <div class="squad-img squad-img-4"></div>
-                        <div class="squad-info">
-                            <span class="squad-num">23</span>
-                            <span class="squad-name">Goalkeeper Pro</span>
-                            <span class="squad-pos">Goalkeeper</span>
-                        </div>
-                    </div>
-                    <div class="squad-player">
-                        <div class="squad-img squad-img-5"></div>
-                        <div class="squad-info">
-                            <span class="squad-num">11</span>
-                            <span class="squad-name">Winger Swift</span>
-                            <span class="squad-pos">Winger</span>
-                        </div>
-                    </div>
-                    <div class="squad-player">
-                        <div class="squad-img squad-img-6"></div>
-                        <div class="squad-info">
-                            <span class="squad-num">4</span>
-                            <span class="squad-name">Defender Strong</span>
-                            <span class="squad-pos">Defender</span>
-                        </div>
+                    <div class="info-card">
+                        <i class="fas fa-calendar"></i>
+                        <h4>38 Home Matches</h4>
+                        <p>Premier League Season</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ── TICKETS & HOSPITALITY ─────────────────── -->
-        <section class="section-yellow">
-            <div class="section-inner">
-                <div class="tickets-promo">
-                    <div class="tickets-text">
-                        <h2>TICKETS &amp; HOSPITALITY</h2>
-                        <p>Experience Almail FC at its best. Join us at the stadium for an unforgettable match day experience.</p>
-                        <div class="tickets-btns">
-                            <a href="#" class="btn-blue">BUY TICKETS</a>
-                            <a href="#" class="btn-outline-dark">HOSPITALITY</a>
-                        </div>
+    <!-- ── SHOP SECTION ──────────────────────────────── -->
+    <section id="shop" class="shop-section">
+        <div class="section-container">
+            <h2 class="section-title">OFFICIAL SHOP</h2>
+            <div class="shop-grid">
+                <div class="shop-item">
+                    <div class="shop-img shop-1"></div>
+                    <div class="shop-body">
+                        <h4>2026/27 Home Kit</h4>
+                        <p class="shop-category">KITS</p>
+                        <p class="shop-price">$89.99</p>
                     </div>
-                    <div class="tickets-img">
-                        <div class="stadium-placeholder">🏟️</div>
+                </div>
+                <div class="shop-item">
+                    <div class="shop-img shop-2"></div>
+                    <div class="shop-body">
+                        <h4>2026/27 Away Kit</h4>
+                        <p class="shop-category">KITS</p>
+                        <p class="shop-price">$89.99</p>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <div class="shop-img shop-3"></div>
+                    <div class="shop-body">
+                        <h4>Training Jacket</h4>
+                        <p class="shop-category">TRAINING</p>
+                        <p class="shop-price">$64.99</p>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <div class="shop-img shop-4"></div>
+                    <div class="shop-body">
+                        <h4>Stadium Scarf</h4>
+                        <p class="shop-category">ACCESSORIES</p>
+                        <p class="shop-price">$24.99</p>
                     </div>
                 </div>
             </div>
-        </section>
+            <div class="section-cta">
+                <a href="#" class="btn-view-all">VISIT SHOP</a>
+            </div>
+        </div>
+    </section>
 
-        <!-- ── SHOP ──────────────────────────────────── -->
-        <section class="section-white">
-            <div class="section-inner">
-                <div class="section-heading dark">
-                    <h2>SHOP</h2>
-                    <a href="#" class="view-all dark">VISIT STORE <i class="fas fa-arrow-right"></i></a>
+    <!-- ── SUPPORT SECTION ───────────────────────────── -->
+    <section id="support" class="support-section">
+        <div class="section-container">
+            <h2 class="section-title">CLUB INFORMATION</h2>
+            <div class="info-grid">
+                <div class="info-box">
+                    <h4><i class="fas fa-history"></i> HISTORY</h4>
+                    <p>Discover the rich heritage of Almail Sports Club spanning over 50 years.</p>
+                    <a href="#">LEARN MORE →</a>
                 </div>
-                <div class="shop-grid">
-                    <div class="shop-item">
-                        <div class="shop-img shop-img-1">
-                            <div class="shop-badge">NEW</div>
-                        </div>
-                        <div class="shop-body">
-                            <span class="shop-cat">KITS</span>
-                            <h4>2026/27 Home Kit</h4>
-                            <span class="shop-price">$89.99</span>
-                        </div>
-                    </div>
-                    <div class="shop-item">
-                        <div class="shop-img shop-img-2">
-                            <div class="shop-badge">NEW</div>
-                        </div>
-                        <div class="shop-body">
-                            <span class="shop-cat">KITS</span>
-                            <h4>2026/27 Away Kit</h4>
-                            <span class="shop-price">$89.99</span>
-                        </div>
-                    </div>
-                    <div class="shop-item">
-                        <div class="shop-img shop-img-3"></div>
-                        <div class="shop-body">
-                            <span class="shop-cat">TRAINING</span>
-                            <h4>Training Jacket</h4>
-                            <span class="shop-price">$64.99</span>
-                        </div>
-                    </div>
-                    <div class="shop-item">
-                        <div class="shop-img shop-img-4"></div>
-                        <div class="shop-body">
-                            <span class="shop-cat">ACCESSORIES</span>
-                            <h4>Stadium Scarf</h4>
-                            <span class="shop-price">$24.99</span>
-                        </div>
-                    </div>
+                <div class="info-box">
+                    <h4><i class="fas fa-heart"></i> FOUNDATION</h4>
+                    <p>Our community outreach programs making a positive impact in the city.</p>
+                    <a href="#">LEARN MORE →</a>
+                </div>
+                <div class="info-box">
+                    <h4><i class="fas fa-map-marker-alt"></i> STADIUM</h4>
+                    <p>Home of Almail FC. 50,000 capacity, state-of-the-art facilities.</p>
+                    <a href="#">LEARN MORE →</a>
+                </div>
+                <div class="info-box">
+                    <h4><i class="fas fa-briefcase"></i> CAREERS</h4>
+                    <p>Join our organization and be part of something special.</p>
+                    <a href="#">LEARN MORE →</a>
                 </div>
             </div>
-        </section>
-
-    </main>
+        </div>
+    </section>
 
     <!-- ── FOOTER ────────────────────────────────────── -->
     <footer class="footer">
-        <div class="footer-inner">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <div class="footer-crest">AFC</div>
-                    <span>ALMAIL FC</span>
-                </div>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-x-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
+        <div class="footer-main">
+            <div class="footer-brand">
+                <div class="footer-crest">ASC</div>
+                <div>
+                    <h3>ALMAIL SPORTS CLUB</h3>
+                    <p>Building Excellence Since 1974</p>
                 </div>
             </div>
             <div class="footer-cols">
@@ -398,9 +380,8 @@
                     <ul>
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">History</a></li>
-                        <li><a href="#">Stadium</a></li>
-                        <li><a href="#">Management</a></li>
-                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Foundation</a></li>
+                        <li><a href="#">Careers</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -409,50 +390,38 @@
                         <li><a href="#">Men's First Team</a></li>
                         <li><a href="#">Women's Team</a></li>
                         <li><a href="#">Academy</a></li>
-                        <li><a href="#">Under-21s</a></li>
-                        <li><a href="#">Under-18s</a></li>
+                        <li><a href="#">Reserves</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>TICKETS</h4>
+                    <h4>TICKETING</h4>
                     <ul>
                         <li><a href="#">Buy Tickets</a></li>
-                        <li><a href="#">Season Tickets</a></li>
-                        <li><a href="#">Hospitality</a></li>
+                        <li><a href="#">Season Passes</a></li>
                         <li><a href="#">Membership</a></li>
-                        <li><a href="#">Away Tickets</a></li>
+                        <li><a href="#">Hospitality</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>SHOP</h4>
-                    <ul>
-                        <li><a href="#">Official Store</a></li>
-                        <li><a href="#">Kits &amp; Jerseys</a></li>
-                        <li><a href="#">Merchandise</a></li>
-                        <li><a href="#">Gift Cards</a></li>
-                        <li><a href="#">Sale</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>HELP</h4>
+                    <h4>MORE</h4>
                     <ul>
                         <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
                         <li><a href="#">Accessibility</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Sitemap</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Almail Football Club Ltd. All rights reserved. Registered in England &amp; Wales.</p>
-                <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Cookie Policy</a>
-                    <a href="#">Terms &amp; Conditions</a>
-                    <a href="#">Accessibility</a>
-                </div>
-            </div>
+        </div>
+        <div class="footer-socials">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Almail Sports Club. All rights reserved.</p>
         </div>
     </footer>
 
