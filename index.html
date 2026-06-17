@@ -12,15 +12,14 @@
     <!-- ── PROMO BANNER ──────────────────────────────────── -->
     <div class="promo-banner">
         <div class="banner-content">
-            <span class="banner-text">Professional Amateur Football Club — Established 2020</span>
+            <span class="banner-text" data-i18n="promo-text">Professional Amateur Football Club — Established 2021</span>
         </div>
         <div class="banner-right">
-            <a href="mailto:almailclub@gmail.com" class="banner-icon"><i class="fas fa-envelope"></i> Contact</a>
-            <select class="banner-lang">
-                <option>EN</option>
-                <option>ES</option>
-                <option>FR</option>
-            </select>
+            <a href="mailto:almailclub@gmail.com" class="banner-icon"><i class="fas fa-envelope"></i> <span data-i18n="banner-contact">Contact</span></a>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
+                <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar')">AR</button>
+            </div>
         </div>
     </div>
 
@@ -34,12 +33,12 @@
                 </div>
             </a>
             <nav class="main-nav" id="mainNav">
-                <a href="#latest" class="nav-link">NEWS</a>
-                <a href="#teams" class="nav-link">SQUAD</a>
-                <a href="#matches" class="nav-link">MATCHES</a>
-                <a href="#tickets" class="nav-link">TICKETS</a>
-                <a href="#shop" class="nav-link">SHOP</a>
-                <a href="#support" class="nav-link">CLUB</a>
+                <a href="#latest" class="nav-link" data-i18n="nav-news">NEWS</a>
+                <a href="#teams" class="nav-link" data-i18n="nav-squad">SQUAD</a>
+                <a href="#matches" class="nav-link" data-i18n="nav-matches">MATCHES</a>
+                <a href="#tickets" class="nav-link" data-i18n="nav-tickets">TICKETS</a>
+                <a href="#shop" class="nav-link" data-i18n="nav-shop">SHOP</a>
+                <a href="#support" class="nav-link" data-i18n="nav-club">CLUB</a>
             </nav>
             <div class="header-right">
                 <button class="search-btn"><i class="fas fa-search"></i></button>
@@ -51,11 +50,11 @@
     <!-- ── SECONDARY NAV ────────────────────────────────── -->
     <nav class="secondary-nav">
         <div class="secondary-inner">
-            <a href="#latest" class="sec-link active">Latest</a>
-            <a href="#matches" class="sec-link">Results</a>
-            <a href="#teams" class="sec-link">Squad</a>
-            <a href="#support" class="sec-link">Stadium</a>
-            <a href="#support" class="sec-link">Club</a>
+            <a href="#latest" class="sec-link active" data-i18n="sec-latest">Latest</a>
+            <a href="#matches" class="sec-link" data-i18n="sec-results">Results</a>
+            <a href="#teams" class="sec-link" data-i18n="nav-squad">Squad</a>
+            <a href="#support" class="sec-link" data-i18n="sec-stadium">Stadium</a>
+            <a href="#support" class="sec-link" data-i18n="nav-club">Club</a>
         </div>
     </nav>
 
@@ -67,11 +66,11 @@
             <div class="hero-logo-wrap">
                 <img src="logo.png" alt="Almail SC" class="hero-logo-img" onerror="this.style.display='none';">
             </div>
-            <h1 class="hero-title">ALMAIL SPORTS CLUB</h1>
-            <p class="hero-subtitle">Professional Amateur Football Club</p>
+            <h1 class="hero-title" data-i18n="hero-title">ALMAIL SPORTS CLUB</h1>
+            <p class="hero-subtitle" data-i18n="hero-subtitle">Professional Amateur Football Club</p>
             <div class="hero-buttons">
-                <a href="#matches" class="hero-btn btn-white">VIEW RESULTS</a>
-                <a href="#teams" class="hero-btn btn-ghost">OUR SQUAD</a>
+                <a href="#matches" class="hero-btn btn-white" data-i18n="hero-btn-results">VIEW RESULTS</a>
+                <a href="#teams" class="hero-btn btn-ghost" data-i18n="hero-btn-squad">OUR SQUAD</a>
             </div>
         </div>
     </section>
@@ -79,17 +78,17 @@
     <!-- ── LATEST NEWS ────────────────────────────────────– -->
     <section id="latest" class="news-section">
         <div class="section-container">
-            <h2 class="section-title">LATEST NEWS</h2>
+            <h2 class="section-title" data-i18n="news-title">LATEST NEWS</h2>
             <div class="news-grid">
                 <article class="news-card featured">
                     <div class="news-img news-img-1">
-                        <div class="news-category-badge">CLUB NEWS</div>
+                        <div class="news-category-badge" data-i18n="news-category">CLUB NEWS</div>
                     </div>
                     <div class="news-body">
-                        <span class="news-meta">17 JUN 2026 &nbsp;&bull;&nbsp; Club News</span>
-                        <h3>Almail SC Renews Amateur Club Status for 2025</h3>
-                        <p>Almail Sports Club is proud to announce the renewal of its amateur club status for the 2025 season, reaffirming our commitment to grassroots football and developing talent in the community.</p>
-                        <a href="news-amateur-status.html" class="news-link">READ FULL ARTICLE</a>
+                        <span class="news-meta"><span data-i18n="news-date">17 JUN 2026</span> &nbsp;&bull;&nbsp; <span data-i18n="news-category">Club News</span></span>
+                        <h3 data-i18n="news-article-title">Almail SC Renews Amateur Club Status for 2025</h3>
+                        <p data-i18n="news-article-desc">Almail Sports Club is proud to announce the renewal of its amateur club status for the 2025 season, reaffirming our commitment to grassroots football and developing talent in the community.</p>
+                        <a href="news-amateur-status.html" class="news-link" data-i18n="news-read-more">READ FULL ARTICLE</a>
                     </div>
                 </article>
             </div>
@@ -99,22 +98,22 @@
     <!-- ── MATCHES SECTION ───────────────────────────────── -->
     <section id="matches" class="matches-section">
         <div class="section-container">
-            <h2 class="section-title">MATCHES</h2>
+            <h2 class="section-title" data-i18n="matches-title">MATCHES</h2>
 
             <!-- Season Selector -->
             <div class="season-tabs">
-                <button class="season-tab active" data-season="2025">2025</button>
-                <button class="season-tab" data-season="2024">2024</button>
-                <button class="season-tab" data-season="2023">2023</button>
-                <button class="season-tab" data-season="2022">2022</button>
+                <button class="season-tab active" data-season="2025" data-i18n="season-2025">2025</button>
+                <button class="season-tab" data-season="2024" data-i18n="season-2024">2024</button>
+                <button class="season-tab" data-season="2023" data-i18n="season-2023">2023</button>
+                <button class="season-tab" data-season="2022" data-i18n="season-2022">2022</button>
             </div>
 
             <!-- 2025 Season -->
             <div class="season-panel active" id="season-2025">
                 <div class="match-app-card" onclick="openMatchDetail('dumankaya')">
                     <div class="match-app-header">
-                        <span class="match-competition-badge">DUMANKAYA CUP</span>
-                        <span class="match-type-badge">FINAL</span>
+                        <span class="match-competition-badge" data-i18n="competition-dumankaya">DUMANKAYA CUP</span>
+                        <span class="match-type-badge" data-i18n="match-final">FINAL</span>
                     </div>
                     <div class="match-app-body">
                         <div class="match-app-team home-team">
@@ -122,24 +121,24 @@
                                 <img src="logo.png" alt="ASC" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                                 <span class="crest-placeholder">A</span>
                             </div>
-                            <span class="match-team-name">ALMAIL SC</span>
+                            <span class="match-team-name" data-i18n="team-almail">ALMAIL SC</span>
                         </div>
                         <div class="match-app-score-block">
                             <div class="match-app-score">7 <span class="score-sep">–</span> 4</div>
-                            <div class="match-app-status ft">FT</div>
+                            <div class="match-app-status ft" data-i18n="ft">FT</div>
                         </div>
                         <div class="match-app-team away-team">
                             <div class="match-team-crest alt-crest">
                                 <span class="crest-placeholder">S</span>
                             </div>
-                            <span class="match-team-name">SHABAB AL HURA</span>
+                            <span class="match-team-name" data-i18n="team-shabab">SHABAB AL HURA</span>
                         </div>
                     </div>
                     <div class="match-app-footer">
                         <span><i class="fas fa-calendar"></i> Fri 8 Aug 2025</span>
                         <span><i class="fas fa-clock"></i> 7:55 PM</span>
                         <span><i class="fas fa-map-marker-alt"></i> Dumankaya Street Stadium</span>
-                        <span class="match-details-link">MATCH DETAILS <i class="fas fa-chevron-right"></i></span>
+                        <span class="match-details-link" data-i18n="match-details">MATCH DETAILS <i class="fas fa-chevron-right"></i></span>
                     </div>
                 </div>
             </div>
@@ -148,8 +147,7 @@
             <div class="season-panel" id="season-2024">
                 <div class="coming-soon-matches">
                     <i class="fas fa-calendar-alt"></i>
-                    <h3>2024 Season Matches</h3>
-                    <p>Match records for the 2024 season are coming soon.</p>
+                    <h3><span data-i18n="season-records">Match records for the</span> 2024 <span data-i18n="season-coming">season are coming soon.</span></h3>
                 </div>
             </div>
 
@@ -157,8 +155,7 @@
             <div class="season-panel" id="season-2023">
                 <div class="coming-soon-matches">
                     <i class="fas fa-calendar-alt"></i>
-                    <h3>2023 Season Matches</h3>
-                    <p>Match records for the 2023 season are coming soon.</p>
+                    <h3><span data-i18n="season-records">Match records for the</span> 2023 <span data-i18n="season-coming">season are coming soon.</span></h3>
                 </div>
             </div>
 
@@ -166,8 +163,7 @@
             <div class="season-panel" id="season-2022">
                 <div class="coming-soon-matches">
                     <i class="fas fa-calendar-alt"></i>
-                    <h3>2022 Season Matches</h3>
-                    <p>Match records for the 2022 season are coming soon.</p>
+                    <h3><span data-i18n="season-records">Match records for the</span> 2022 <span data-i18n="season-coming">season are coming soon.</span></h3>
                 </div>
             </div>
 
@@ -260,11 +256,11 @@
     <!-- ── SQUAD SECTION ─────────────────────────────────── -->
     <section id="teams" class="teams-section">
         <div class="section-container">
-            <h2 class="section-title">MEN'S FIRST TEAM</h2>
+            <h2 class="section-title" data-i18n="squad-title">MEN'S FIRST TEAM</h2>
             <div class="coming-soon-section">
                 <i class="fas fa-users"></i>
-                <h3>Squad Coming Soon</h3>
-                <p>Player profiles for the Almail Sports Club squad will be published soon. Check back for full squad details.</p>
+                <h3 data-i18n="squad-coming">Squad Coming Soon</h3>
+                <p data-i18n="player-profiles">Player profiles for the Almail Sports Club squad will be published soon. Check back for full squad details.</p>
             </div>
         </div>
     </section>
@@ -272,11 +268,11 @@
     <!-- ── TICKETS SECTION ─────────────────────────────────– -->
     <section id="tickets" class="tickets-section">
         <div class="section-container">
-            <h2 class="section-title">TICKETS &amp; MEMBERSHIP</h2>
+            <h2 class="section-title" data-i18n="tickets-title">TICKETS &amp; MEMBERSHIP</h2>
             <div class="coming-soon-section">
                 <i class="fas fa-ticket-alt"></i>
-                <h3>Tickets Coming Soon</h3>
-                <p>Ticketing services will be available soon. Stay tuned for updates on how to get your match tickets.</p>
+                <h3 data-i18n="tickets-coming">Tickets Coming Soon</h3>
+                <p data-i18n="tickets-desc">Ticketing services will be available soon. Stay tuned for updates on how to get your match tickets.</p>
             </div>
         </div>
     </section>
@@ -284,11 +280,11 @@
     <!-- ── SHOP SECTION ────────────────────────────────────– -->
     <section id="shop" class="shop-section">
         <div class="section-container">
-            <h2 class="section-title">OFFICIAL SHOP</h2>
+            <h2 class="section-title" data-i18n="shop-title">OFFICIAL SHOP</h2>
             <div class="coming-soon-section">
                 <i class="fas fa-shopping-bag"></i>
-                <h3>Official Shop Coming Soon</h3>
-                <p>Our official merchandise shop is launching soon. Check back for exclusive Almail SC gear and apparel.</p>
+                <h3 data-i18n="shop-coming">Official Shop Coming Soon</h3>
+                <p data-i18n="shop-desc">Our official merchandise shop is launching soon. Check back for exclusive Almail SC gear and apparel.</p>
             </div>
         </div>
     </section>
@@ -296,24 +292,24 @@
     <!-- ── CLUB INFO ──────────────────────────────────────── -->
     <section id="support" class="support-section">
         <div class="section-container">
-            <h2 class="section-title">CLUB INFORMATION</h2>
+            <h2 class="section-title" data-i18n="club-title">CLUB INFORMATION</h2>
             <div class="info-grid">
                 <div class="info-box">
-                    <h4><i class="fas fa-building"></i> STADIUM</h4>
-                    <p>Bizarri's Stadium, proudly sponsored by Bizarri, is the home ground of Almail Sports Club with world-class facilities.</p>
-                    <a href="stadium.html" class="info-link">LEARN MORE</a>
+                    <h4><i class="fas fa-building"></i> <span data-i18n="stadium">STADIUM</span></h4>
+                    <p data-i18n="stadium-desc">Bizarri's Stadium, proudly sponsored by Bizarri, is the home ground of Almail Sports Club with world-class facilities.</p>
+                    <a href="stadium.html" class="info-link" data-i18n="learn-more">LEARN MORE</a>
                 </div>
                 <div class="info-box">
-                    <h4><i class="fas fa-history"></i> HISTORY</h4>
-                    <p>The full history of Almail Sports Club is coming soon. Discover the journey of the club from its founding to today.</p>
-                    <span class="info-link disabled">COMING SOON</span>
+                    <h4><i class="fas fa-history"></i> <span data-i18n="history">HISTORY</span></h4>
+                    <p data-i18n="history-desc">The full history of Almail Sports Club is coming soon. Discover the journey of the club from its founding to today.</p>
+                    <span class="info-link disabled" data-i18n="coming-soon">COMING SOON</span>
                 </div>
                 <div class="info-box">
-                    <h4><i class="fas fa-running"></i> PLAYER FORM</h4>
-                    <p>Interested in joining Almail SC? Get in touch with the club directly. Please provide: name, position, date of birth, country, height, and a photo.</p>
+                    <h4><i class="fas fa-running"></i> <span data-i18n="player-form">PLAYER FORM</span></h4>
+                    <p data-i18n="player-form-desc">Interested in joining Almail SC? Get in touch with the club directly. Please provide: name, position, date of birth, country, height, and a photo.</p>
                     <div class="contact-links">
-                        <a href="mailto:almailclub@gmail.com?subject=Player%20Application&body=Name:%0APosition:%0ADate%20of%20Birth:%0ACountry:%0AHeight:%0A%0APlease%20attach%20a%20photo." class="info-link">EMAIL US</a>
-                        <a href="https://wa.me/14402785870?text=Hi%2C%20I%27m%20interested%20in%20joining%20Almail%20SC" target="_blank" rel="noopener" class="info-link whatsapp">WHATSAPP</a>
+                        <a href="mailto:almailclub@gmail.com?subject=Player%20Application&body=Name:%0APosition:%0ADate%20of%20Birth:%0ACountry:%0AHeight:%0A%0APlease%20attach%20a%20photo." class="info-link" data-i18n="email-us">EMAIL US</a>
+                        <a href="https://wa.me/14402785870?text=Hi%2C%20I%27m%20interested%20in%20joining%20Almail%20SC" target="_blank" rel="noopener" class="info-link whatsapp" data-i18n="whatsapp">WHATSAPP</a>
                     </div>
                     <div class="contact-details">
                         <span><i class="fas fa-envelope"></i> almailclub@gmail.com</span>
@@ -321,9 +317,9 @@
                     </div>
                 </div>
                 <div class="info-box">
-                    <h4><i class="fas fa-envelope"></i> CONTACT</h4>
-                    <p>Get in touch with us for general enquiries about the club, partnerships, or supporter information.</p>
-                    <a href="mailto:almailclub@gmail.com" class="info-link">CONTACT US</a>
+                    <h4><i class="fas fa-envelope"></i> <span data-i18n="contact">CONTACT</span></h4>
+                    <p data-i18n="contact-desc">Get in touch with us for general enquiries about the club, partnerships, or supporter information.</p>
+                    <a href="mailto:almailclub@gmail.com" class="info-link" data-i18n="contact-us">CONTACT US</a>
                 </div>
             </div>
         </div>
@@ -395,10 +391,11 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 Almail Sports Club. All rights reserved. &nbsp;&bull;&nbsp; Bizarri's Stadium</p>
+            <p data-i18n="footer-copyright">&copy; 2026 Almail Sports Club. All rights reserved. &nbsp;&bull;&nbsp; Bizarri's Stadium</p>
         </div>
     </footer>
 
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
