@@ -108,6 +108,16 @@
     letter-spacing: 2px;
 }
 
+.stadium-placeholder {
+    gap: 2rem;
+}
+
+.stadium-placeholder i {
+    font-size: 4rem;
+    color: var(--border-light);
+    opacity: 0.6;
+}
+
 /* ── ARTICLE TEXT ────────────────────────────────────────── */
 .article-text {
     max-width: 680px;
@@ -153,6 +163,39 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+}
+
+.article-subheading {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-top: 2rem;
+    margin-bottom: 1.2rem;
+}
+
+.article-list {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.article-list li {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    line-height: 1.8;
+    padding-left: 1.8rem;
+    position: relative;
+    margin-bottom: 0.8rem;
+}
+
+.article-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    background: var(--white);
+    border-radius: 50%;
 }
 
 /* ── ARTICLE SOCIAL SHARE ────────────────────────────────── */
@@ -294,6 +337,39 @@
 .sidebar-date {
     font-size: 0.8rem;
     color: var(--text-gray);
+}
+
+.sidebar-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.sidebar-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.sidebar-info-row:last-child {
+    border-bottom: none;
+}
+
+.sidebar-label {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.sidebar-value {
+    font-size: 0.85rem;
+    color: var(--white);
+    font-weight: 600;
+    text-align: right;
 }
 
 /* ── RESPONSIVE ──────────────────────────────────────────── */

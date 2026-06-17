@@ -1089,6 +1089,14 @@ img { display: block; max-width: 100%; }
 
 .social-list i { width: 1rem; }
 
+.fab.fa-x-twitter {
+    color: var(--white) !important;
+}
+
+.fa-x-twitter {
+    color: var(--white) !important;
+}
+
 /* Footer Social Icons Bar */
 .footer-socials {
     max-width: 1200px;
