@@ -10,26 +10,12 @@
 </head>
 <body>
 
-    <!-- ── PROMO BANNER ──────────────────────────────────── -->
-    <div class="promo-banner">
-        <div class="banner-content">
-            <span class="banner-text" data-i18n="promo-text">Professional Amateur Football Club — Established 2021</span>
-        </div>
-        <div class="banner-right">
-            <a href="mailto:almailclub@gmail.com" class="banner-icon"><i class="fas fa-envelope"></i> <span data-i18n="banner-contact">Contact</span></a>
-            <div class="language-switcher">
-                <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
-                <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar')">AR</button>
-            </div>
-        </div>
-    </div>
-
     <!-- ── MAIN HEADER ───────────────────────────────────── -->
     <header class="main-header">
         <div class="header-inner">
             <a href="index.html" class="club-logo">
                 <div class="club-crest">
-                    <img src="logo.png" alt="Almail SC" class="crest-img" onerror="this.style.display:'none'; this.nextElementSibling.style.display='flex';">
+                    <img src="logo.png" alt="Almail SC" class="crest-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                     <span class="crest-text crest-fallback">ASC</span>
                 </div>
             </a>
@@ -40,6 +26,10 @@
                 <a href="index.html#tickets" class="nav-link">TICKETS</a>
                 <a href="index.html#shop" class="nav-link">SHOP</a>
                 <a href="index.html#support" class="nav-link">CLUB</a>
+                <div class="language-switcher nav-lang">
+                    <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
+                    <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar')">AR</button>
+                </div>
             </nav>
             <div class="header-right">
                 <button class="search-btn"><i class="fas fa-search"></i></button>
@@ -47,17 +37,6 @@
             </div>
         </div>
     </header>
-
-    <!-- ── SECONDARY NAV ────────────────────────────────── -->
-    <nav class="secondary-nav">
-        <div class="secondary-inner">
-            <a href="index.html#latest" class="sec-link active">Latest</a>
-            <a href="index.html#matches" class="sec-link">Results</a>
-            <a href="index.html#teams" class="sec-link">Squad</a>
-            <a href="index.html#support" class="sec-link">Stadium</a>
-            <a href="index.html#support" class="sec-link">Club</a>
-        </div>
-    </nav>
 
     <!-- ── ARTICLE BREADCRUMB ────────────────────────────── -->
     <div class="article-breadcrumb">
