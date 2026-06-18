@@ -234,11 +234,17 @@ body.rtl-mode .back-to-top {
 .hero::after {
     content: '';
     position: absolute;
-    inset: 0;
-    background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 80px, rgba(255,255,255,0.08) 80px, rgba(255,255,255,0.08) 81px),
-        repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(255,255,255,0.08) 80px, rgba(255,255,255,0.08) 81px);
+    right: -10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 600px;
+    height: 600px;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(255,255,255,0.12) 0%, transparent 20%),
+        radial-gradient(circle at 70% 25%, rgba(255,255,255,0.12) 0%, transparent 20%),
+        radial-gradient(ellipse 250px 400px at 50% 60%, transparent 0%, transparent 30%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.05) 100%);
     pointer-events: none;
+    filter: drop-shadow(-20px 0 40px rgba(0,0,0,0.5));
 }
 
 .hero-bg, .hero-overlay { position: absolute; inset: 0; }
