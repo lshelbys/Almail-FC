@@ -529,8 +529,8 @@ body.rtl-mode .back-to-top {
 }
 
 .match-team-crest.alt-crest {
-    background: var(--primary-dark);
-    border: 1px solid var(--border-light);
+    background: transparent;
+    border: none;
 }
 
 .crest-placeholder {
@@ -1648,7 +1648,10 @@ body.rtl-mode .float-menu-top {
 .footer-socials .social-icon-link i.fa-x-twitter,
 .footer-cols .social-list a i.fa-x-twitter,
 .article-social-share a i.fa-x-twitter,
-.sidebar-social a i.fa-x-twitter {
+.sidebar-social a i.fa-x-twitter,
+i.fa-x-twitter, .fa-x-twitter {
     color: var(--white) !important;
     -webkit-text-fill-color: var(--white) !important;
+    font-size: inherit;
+}
 }
