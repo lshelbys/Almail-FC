@@ -1645,10 +1645,10 @@ body.rtl-mode .float-menu-top {
 }
 
 /* ── X / TWITTER ICON FORCE WHITE ────────────────────────── */
-.footer-socials .social-icon-link i.fa-x,
-.article-social-share a i.fa-x,
-.sidebar-social a i.fa-x,
-i.fa-x, .fa-x {
+.footer-socials .social-icon-link i.fa-twitter,
+.article-social-share a i.fa-twitter,
+.sidebar-social a i.fa-twitter,
+i.fa-twitter, .fa-twitter {
     color: var(--white) !important;
     -webkit-text-fill-color: var(--white) !important;
     font-size: inherit;
