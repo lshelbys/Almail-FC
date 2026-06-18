@@ -236,16 +236,18 @@ body.rtl-mode .back-to-top {
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(135deg, transparent 0%, transparent 40%, rgba(255,255,255,0.06) 50%, transparent 60%, transparent 100%),
-        linear-gradient(45deg, transparent 0%, transparent 35%, rgba(255,255,255,0.08) 48%, rgba(255,255,255,0.04) 52%, transparent 65%, transparent 100%),
-        linear-gradient(to right, transparent 0%, transparent 30%, rgba(255,255,255,0.05) 50%, transparent 70%, transparent 100%),
-        radial-gradient(ellipse 800px 400px at 20% 80%, rgba(255,255,255,0.04) 0%, transparent 70%),
-        radial-gradient(ellipse 600px 300px at 80% 20%, rgba(255,255,255,0.06) 0%, transparent 60%);
+        linear-gradient(135deg, transparent 0%, transparent 40%, rgba(255,255,255,0.15) 50%, transparent 60%, transparent 100%),
+        linear-gradient(45deg, transparent 0%, transparent 35%, rgba(255,255,255,0.18) 48%, rgba(255,255,255,0.08) 52%, transparent 65%, transparent 100%),
+        linear-gradient(to right, transparent 0%, transparent 30%, rgba(255,255,255,0.12) 50%, transparent 70%, transparent 100%),
+        radial-gradient(ellipse 800px 400px at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 70%),
+        radial-gradient(ellipse 600px 300px at 80% 20%, rgba(255,255,255,0.12) 0%, transparent 60%);
     pointer-events: none;
+    z-index: 2;
 }
 
 .hero-bg, .hero-overlay { position: absolute; inset: 0; }
-.hero-overlay { background: radial-gradient(ellipse at 70% 50%, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0.5) 100%); }
+.hero-bg { z-index: 1; }
+.hero-overlay { background: radial-gradient(ellipse at 70% 50%, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0.3) 100%); z-index: 3; }
 
 .hero-content {
     position: relative;
