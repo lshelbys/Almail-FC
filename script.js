@@ -133,17 +133,16 @@ const matchData = {
         lineup: ['tayem', 'jasem', 'bassam', 'faisal', 'fawaz']
     },
     'dumankaya-2023-r1': {
-        compLabel: 'DUMANKAYA CUP — GROUP STAGE', compName: 'Dumankaya Cup', round: 'Group Stage - Round 1',
+        compLabel: 'DUMANKAYA CUP — GROUP STAGE — ROUND 1', compName: 'Dumankaya Cup', round: 'Group Stage — Round 1',
         homeTeam: 'RIYADH UNITED', homeImg: '', homeCrest: 'RU',
         awayTeam: 'PALESTINE GUARDS', awayImg: 'Guards.png', awayCrest: 'PG',
         score: '5 – 0', status: 'FT', winner: 'Riyadh United WIN',
         date: 'Sunday, 13 July 2023', kickoff: '7:40 PM',
         venue: 'Dumankaya Street Stadium',
-        goals: [],
-        lineup: []
+        goals: [], noLineup: true, lineup: []
     },
     'dumankaya-2023-r2': {
-        compLabel: 'DUMANKAYA CUP — GROUP STAGE', compName: 'Dumankaya Cup', round: 'Group Stage - Round 2',
+        compLabel: 'DUMANKAYA CUP — GROUP STAGE — ROUND 2', compName: 'Dumankaya Cup', round: 'Group Stage — Round 2',
         homeTeam: 'ALMAIL SC', homeImg: 'AlmailScLogo.png', homeCrest: 'A',
         awayTeam: 'PALESTINE GUARDS', awayImg: 'Guards.png', awayCrest: 'PG',
         score: '8 – 1', status: 'FT', winner: 'Almail SC WIN',
@@ -153,7 +152,7 @@ const matchData = {
         lineup: ['jasem', 'hamad', 'abulhasan']
     },
     'dumankaya-2023-r3': {
-        compLabel: 'DUMANKAYA CUP — GROUP STAGE', compName: 'Dumankaya Cup', round: 'Group Stage - Round 3',
+        compLabel: 'DUMANKAYA CUP — GROUP STAGE — ROUND 3', compName: 'Dumankaya Cup', round: 'Group Stage — Round 3',
         homeTeam: 'ALMAIL SC', homeImg: 'AlmailScLogo.png', homeCrest: 'A',
         awayTeam: 'RIYADH UNITED', awayImg: '', awayCrest: 'RU',
         score: '5 – 2', status: 'FT', winner: 'Almail SC WIN',
@@ -169,6 +168,7 @@ const matchData = {
         score: '7 – 6', status: 'FT', winner: 'Almail SC WIN',
         date: 'Wednesday, 16 August 2023', kickoff: '5:30 PM',
         venue: 'Dumankaya Street Stadium',
+        mvp: 'Faisal Al Mansour', mvpPosition: 'Goalkeeper',
         goals: [
             { time: "1'",    side: 'home', scorer: 'Jasem Almail', score: '1 — 0' },
             { time: "6'",    side: 'home', scorer: 'Jasem Almail', score: '2 — 0' },
@@ -216,25 +216,24 @@ function updateModalContent(match) {
     document.querySelector('.modal-score-block .modal-score').textContent = match.score;
     document.querySelector('.modal-score-block .modal-status').textContent = match.status;
 
-    // Teams
+    // Home crest — rebuild innerHTML so image sizing is always correct
     const homeTeam = document.querySelector('.modal-team:first-of-type');
     const awayTeam = document.querySelector('.modal-team:last-of-type');
 
-    const homeImg = homeTeam.querySelector('img');
-    homeImg.src = match.homeImg;
-    homeImg.style.display = '';
-    homeTeam.querySelector('.crest-placeholder').textContent = match.homeCrest;
+    const homeCrestEl = homeTeam.querySelector('.modal-crest');
+    if (match.homeImg) {
+        homeCrestEl.innerHTML = `<img src="${match.homeImg}" alt="${match.homeTeam}" style="width:100%;height:100%;object-fit:contain;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><span class="crest-placeholder" style="display:none;">${match.homeCrest}</span>`;
+    } else {
+        homeCrestEl.innerHTML = `<span class="crest-placeholder">${match.homeCrest}</span>`;
+    }
     homeTeam.querySelector('.modal-team-name').textContent = match.homeTeam;
 
-    const awayImg = awayTeam.querySelector('img');
+    const awayCrestEl = awayTeam.querySelector('.modal-crest');
     if (match.awayImg) {
-        awayImg.src = match.awayImg;
-        awayImg.style.display = '';
+        awayCrestEl.innerHTML = `<img src="${match.awayImg}" alt="${match.awayTeam}" style="width:100%;height:100%;object-fit:contain;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><span class="crest-placeholder" style="display:none;">${match.awayCrest}</span>`;
     } else {
-        awayImg.removeAttribute('src');
-        awayImg.style.display = 'none';
+        awayCrestEl.innerHTML = `<span class="crest-placeholder">${match.awayCrest}</span>`;
     }
-    awayTeam.querySelector('.crest-placeholder').textContent = match.awayCrest;
     awayTeam.querySelector('.modal-team-name').textContent = match.awayTeam;
 
     // Meta row
@@ -243,7 +242,7 @@ function updateModalContent(match) {
          <span><i class="fas fa-clock"></i> ${match.kickoff}</span>
          <span><i class="fas fa-map-marker-alt"></i> ${match.venue}</span>`;
 
-    // Details tab — rebuilt fully so the rows always match the data
+    // Details tab
     document.getElementById('tab-details').innerHTML = `
         <div class="detail-row"><span class="detail-label">Competition</span><span class="detail-value">${match.compName}</span></div>
         <div class="detail-row"><span class="detail-label">Round</span><span class="detail-value">${match.round}</span></div>
@@ -252,7 +251,7 @@ function updateModalContent(match) {
         <div class="detail-row"><span class="detail-label">Venue</span><span class="detail-value">${match.venue}</span></div>
         <div class="detail-row"><span class="detail-label">Result</span><span class="detail-value winner">${match.winner}</span></div>`;
 
-    // Goals tab — rebuilt from data
+    // Goals tab
     const goalsPanel = document.getElementById('tab-goals');
     if (match.goals && match.goals.length) {
         const rows = match.goals.map(g => {
@@ -265,6 +264,12 @@ function updateModalContent(match) {
                         <div class="goal-away-col">${g.side === 'away' ? cell : ''}</div>
                     </div>`;
         }).join('');
+        const mvpHtml = match.mvp ? `
+            <div style="margin-top:1.5rem;padding:1rem 1.2rem;background:rgba(255,215,0,0.1);border-left:3px solid gold;border-radius:4px;">
+                <div style="font-size:0.7rem;letter-spacing:0.1em;color:gold;margin-bottom:0.3rem;">MVP OF THE MATCH</div>
+                <div style="font-size:1rem;font-weight:700;color:#fff;">${match.mvp}</div>
+                <div style="font-size:0.8rem;color:rgba(255,255,255,0.6);">${match.mvpPosition}</div>
+            </div>` : '';
         goalsPanel.innerHTML = `
             <div class="goals-timeline">
                 <div class="goals-header-row">
@@ -273,7 +278,7 @@ function updateModalContent(match) {
                     <span class="goals-team-lbl align-right">${match.awayTeam}</span>
                 </div>
                 ${rows}
-            </div>`;
+            </div>${mvpHtml}`;
     } else {
         goalsPanel.innerHTML = `<div class="coming-soon-matches" style="padding:2rem 1rem;">
             <i class="fas fa-futbol"></i>
@@ -281,23 +286,32 @@ function updateModalContent(match) {
         </div>`;
     }
 
-    // Line-up tab
-    if (match.lineup && match.lineup.length > 0) {
-        document.querySelector('#tab-lineup #lineup-list-view .lineup-list').innerHTML =
-            match.lineup.map(id => {
-                const player = playerData[id];
-                return `<li class="lineup-player">
-                            <button class="lineup-player-btn" onclick="showPlayerProfile('${id}')">
-                                <span class="lineup-player-name">${player.name}</span>
-                                <i class="fas fa-chevron-right lineup-chevron-right"></i>
-                            </button>
-                        </li>`;
-            }).join('');
+    // Line-up tab — hide entire tab if noLineup is set
+    const lineupTab = document.querySelector('.modal-tab[data-tab="lineup"]');
+    const lineupPanel = document.getElementById('tab-lineup');
+    if (match.noLineup) {
+        if (lineupTab) lineupTab.style.display = 'none';
+        if (lineupPanel) lineupPanel.style.display = 'none';
     } else {
-        document.querySelector('#tab-lineup #lineup-list-view .lineup-list').innerHTML =
-            `<div style="padding: 2rem 1rem; text-align: center; color: rgba(255,255,255,0.6);">
-                <p>Lineup information not available for this match</p>
-            </div>`;
+        if (lineupTab) lineupTab.style.display = '';
+        if (lineupPanel) lineupPanel.style.display = '';
+        if (match.lineup && match.lineup.length > 0) {
+            document.querySelector('#tab-lineup #lineup-list-view .lineup-list').innerHTML =
+                match.lineup.map(id => {
+                    const player = playerData[id];
+                    return `<li class="lineup-player">
+                                <button class="lineup-player-btn" onclick="showPlayerProfile('${id}')">
+                                    <span class="lineup-player-name">${player.name}</span>
+                                    <i class="fas fa-chevron-right lineup-chevron-right"></i>
+                                </button>
+                            </li>`;
+                }).join('');
+        } else {
+            document.querySelector('#tab-lineup #lineup-list-view .lineup-list').innerHTML =
+                `<div style="padding:2rem 1rem;text-align:center;color:rgba(255,255,255,0.6);">
+                    <p>Lineup information not available for this match</p>
+                </div>`;
+        }
     }
 }
 
@@ -384,6 +398,23 @@ function showPlayerProfile(id) {
 function hidePlayerProfile() {
     document.getElementById('player-profile-view').classList.add('hidden');
     document.getElementById('lineup-list-view').classList.remove('hidden');
+}
+
+// ── 2023 Sub-tab Toggles ─────────────────────────────────
+function show2023Section(section) {
+    document.getElementById('s2023-dumankaya').style.display = section === 'dumankaya' ? '' : 'none';
+    document.getElementById('s2023-friendlies').style.display = section === 'friendlies' ? '' : 'none';
+    document.querySelectorAll('.comp-subtab').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase().includes(section === 'dumankaya' ? 'dumankaya' : 'friendl'));
+    });
+}
+
+function show2023View(view) {
+    document.getElementById('s2023-matches').style.display = view === 'matches' ? '' : 'none';
+    document.getElementById('s2023-standings').style.display = view === 'standings' ? '' : 'none';
+    document.querySelectorAll('.view-toggle-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase().includes(view));
+    });
 }
 
 // ── Modal Tab Switching ───────────────────────────────────

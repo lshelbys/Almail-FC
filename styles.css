@@ -1405,6 +1405,59 @@ body.rtl-mode .back-to-top {
     .season-tab { white-space: nowrap; }
 }
 
+/* ── 2023 COMPETITION SUB-TABS ───────────────────────────── */
+.comp-subtabs {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1.5rem 0 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 0;
+}
+.comp-subtab {
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 0.65rem 1.2rem;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: color 0.2s, border-color 0.2s;
+}
+.comp-subtab:hover { color: var(--white); }
+.comp-subtab.active {
+    color: var(--white);
+    border-bottom-color: var(--white);
+}
+.view-toggle-bar {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+.view-toggle-btn {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.6);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.view-toggle-btn:hover { background: rgba(255,255,255,0.12); color: var(--white); }
+.view-toggle-btn.active {
+    background: var(--white);
+    color: var(--primary);
+    border-color: var(--white);
+}
+
 /* ── RTL (ARABIC) SUPPORT ─────────────────────────────────– */
 html[dir="rtl"],
 body.rtl-mode {
