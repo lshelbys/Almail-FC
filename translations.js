@@ -27,8 +27,9 @@ const translations = {
         // News Section
         'news-title': 'LATEST NEWS',
         'news-category': 'CLUB NEWS',
-        'news-article-title': 'Almail SC Renews Amateur Club Status for 2026',
-        'news-article-desc': 'Almail Sports Club is proud to announce the renewal of its amateur club status for the 2026 season, reaffirming our commitment to grassroots football and developing talent in the community.',
+        'news-article-title': 'Almail SC Set to Renew Amateur Club Status for 2026',
+        'news-article-desc': 'Almail Sports Club is preparing to renew its amateur club status for the 2026 season, reaffirming the club\'s ongoing commitment to grassroots football and developing talent in the community.',
+        'season-2026': '2026',
         'news-read-more': 'READ FULL ARTICLE',
         'news-date': '17 JUN 2026',
 
@@ -136,8 +137,9 @@ const translations = {
         // News Section
         'news-title': 'أحدث الأخبار',
         'news-category': 'أخبار النادي',
-        'news-article-title': 'نادي الميل يجدد حالته كنادي هاوي لعام 2026',
-        'news-article-desc': 'يفخر نادي الميل الرياضي بإعلان تجديد حالته كنادي هاوي للموسم 2026، مؤكداً التزامنا بكرة القدم الشعبية وتطوير المواهب في المجتمع.',
+        'news-article-title': 'نادي الميل على وشك تجديد حالته كنادي هاوي لعام 2026',
+        'news-article-desc': 'يستعد نادي الميل الرياضي لتجديد حالته كنادي هاوي للموسم 2026، مؤكداً الالتزام المستمر بكرة القدم الشعبية وتطوير المواهب في المجتمع.',
+        'season-2026': '2026',
         'news-read-more': 'اقرأ المقال الكامل',
         'news-date': '17 يونيو 2026',
 
