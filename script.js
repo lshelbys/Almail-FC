@@ -101,21 +101,35 @@ document.querySelectorAll('.season-tab').forEach(tab => {
 // ── Match Detail Modal ────────────────────────────────────
 const matchData = {
     'dumankaya': {
-        competition: 'DUMANKAYA CUP — FINAL',
+        compLabel: 'DUMANKAYA CUP — FINAL', compName: 'Dumankaya Cup', round: 'Final',
         homeTeam: 'ALMAIL SC', homeImg: 'logo.png', homeCrest: 'A',
         awayTeam: 'SHABAB AL HURA', awayImg: 'AlShababLogo.png', awayCrest: 'S',
         score: '7 – 4', status: 'FT', winner: 'Almail SC WIN',
         date: 'Friday, 8 August 2025', kickoff: '7:55 PM',
         venue: 'Dumankaya Street Stadium',
+        goals: [
+            { time: "1'",    side: 'away', scorer: 'Giyath', score: '0 — 1' },
+            { time: "2'",    side: 'home', scorer: 'Tayem',  score: '1 — 1' },
+            { time: "3'",    side: 'home', scorer: 'Tayem',  score: '2 — 1' },
+            { time: "12'",   side: 'away', scorer: 'Samo',   score: '2 — 2' },
+            { time: "13'",   side: 'home', scorer: 'Jasem',  score: '3 — 2' },
+            { time: "14'",   side: 'home', scorer: 'Tayem',  score: '4 — 2' },
+            { time: "15'",   side: 'away', scorer: 'Samo',   score: '4 — 3' },
+            { time: "15'",   side: 'home', scorer: 'Jasem',  score: '5 — 3' },
+            { time: "16'",   side: 'away', scorer: 'Samo',   score: '5 — 4' },
+            { time: "17'",   side: 'home', scorer: 'Jasem',  score: '6 — 4' },
+            { time: "20'+1", side: 'home', scorer: 'Tayem',  score: '7 — 4' }
+        ],
         lineup: ['tayem', 'jasem']
     },
     'dumankaya-2024': {
-        competition: 'DUMANKAYA CUP — FINAL',
+        compLabel: 'DUMANKAYA CUP — FINAL', compName: 'Dumankaya Cup', round: 'Final',
         homeTeam: 'ALMAIL SC', homeImg: 'logo.png', homeCrest: 'A',
         awayTeam: 'PALESTINE GUARDS', awayImg: '', awayCrest: 'PG',
         score: '6 – 4', status: 'FT', winner: 'Almail SC WIN',
         date: 'Thursday, 25 July 2024', kickoff: '7:00 PM',
         venue: 'Dumankaya Street Stadium',
+        goals: [],
         lineup: ['tayem', 'jasem', 'bassam', 'faisal', 'fawaz']
     }
 };
@@ -135,59 +149,94 @@ function openMatchDetail(matchId) {
         document.querySelectorAll('.modal-tab-panel').forEach((p, i) => {
             p.classList.toggle('active', i === 0);
         });
+
+        // Always reset line-up to list view (not a player profile)
+        hidePlayerProfile();
     }
 }
 
 function updateModalContent(match) {
-    // Update header
-    document.querySelector('.modal-competition').textContent = match.competition;
+    // Header
+    document.querySelector('.modal-competition').textContent = match.compLabel;
     document.querySelector('.modal-score-block .modal-score').textContent = match.score;
     document.querySelector('.modal-score-block .modal-status').textContent = match.status;
 
-    // Update teams
+    // Teams
     const homeTeam = document.querySelector('.modal-team:first-of-type');
     const awayTeam = document.querySelector('.modal-team:last-of-type');
 
     const homeImg = homeTeam.querySelector('img');
-    const homeCrest = homeTeam.querySelector('.crest-placeholder');
     homeImg.src = match.homeImg;
-    homeCrest.textContent = match.homeCrest;
+    homeImg.style.display = '';
+    homeTeam.querySelector('.crest-placeholder').textContent = match.homeCrest;
     homeTeam.querySelector('.modal-team-name').textContent = match.homeTeam;
 
     const awayImg = awayTeam.querySelector('img');
-    const awayCrest = awayTeam.querySelector('.crest-placeholder');
     if (match.awayImg) {
         awayImg.src = match.awayImg;
         awayImg.style.display = '';
     } else {
+        awayImg.removeAttribute('src');
         awayImg.style.display = 'none';
     }
-    awayCrest.textContent = match.awayCrest;
+    awayTeam.querySelector('.crest-placeholder').textContent = match.awayCrest;
     awayTeam.querySelector('.modal-team-name').textContent = match.awayTeam;
 
-    // Update meta
-    const metaRow = document.querySelector('.modal-meta-row');
-    metaRow.innerHTML = `<span><i class="fas fa-calendar"></i> ${match.date}</span>
-                         <span><i class="fas fa-clock"></i> ${match.kickoff}</span>
-                         <span><i class="fas fa-map-marker-alt"></i> ${match.venue}</span>`;
+    // Meta row
+    document.querySelector('.modal-meta-row').innerHTML =
+        `<span><i class="fas fa-calendar"></i> ${match.date}</span>
+         <span><i class="fas fa-clock"></i> ${match.kickoff}</span>
+         <span><i class="fas fa-map-marker-alt"></i> ${match.venue}</span>`;
 
-    // Update details tab
-    document.querySelector('#tab-details .detail-row:nth-child(5) .detail-value').textContent = match.kickoff;
-    document.querySelector('#tab-details .detail-row:nth-child(4) .detail-value').textContent = match.date;
-    document.querySelector('#tab-details .detail-row:nth-child(6) .detail-value').textContent = match.venue;
-    document.querySelector('#tab-details .detail-value.winner').textContent = match.winner;
+    // Details tab — rebuilt fully so the rows always match the data
+    document.getElementById('tab-details').innerHTML = `
+        <div class="detail-row"><span class="detail-label">Competition</span><span class="detail-value">${match.compName}</span></div>
+        <div class="detail-row"><span class="detail-label">Round</span><span class="detail-value">${match.round}</span></div>
+        <div class="detail-row"><span class="detail-label">Date</span><span class="detail-value">${match.date}</span></div>
+        <div class="detail-row"><span class="detail-label">Kick-off</span><span class="detail-value">${match.kickoff}</span></div>
+        <div class="detail-row"><span class="detail-label">Venue</span><span class="detail-value">${match.venue}</span></div>
+        <div class="detail-row"><span class="detail-label">Result</span><span class="detail-value winner">${match.winner}</span></div>`;
 
-    // Update lineup tab
-    const lineupList = document.querySelector('#tab-lineup #lineup-list-view .lineup-list');
-    lineupList.innerHTML = match.lineup.map(id => {
-        const player = playerData[id];
-        return `<li class="lineup-player">
-                    <button class="lineup-player-btn" onclick="showPlayerProfile('${id}')">
-                        <span class="lineup-player-name">${player.name}</span>
-                        <i class="fas fa-chevron-right lineup-chevron-right"></i>
-                    </button>
-                </li>`;
-    }).join('');
+    // Goals tab — rebuilt from data
+    const goalsPanel = document.getElementById('tab-goals');
+    if (match.goals && match.goals.length) {
+        const rows = match.goals.map(g => {
+            const cell = `<i class="fas fa-futbol goal-ball"></i>
+                          <span class="goal-score-pill">${g.score}</span>
+                          <span class="goal-scorer">${g.scorer}</span>`;
+            return `<div class="goal-row">
+                        <div class="goal-home-col">${g.side === 'home' ? cell : ''}</div>
+                        <div class="goal-time-col">${g.time}</div>
+                        <div class="goal-away-col">${g.side === 'away' ? cell : ''}</div>
+                    </div>`;
+        }).join('');
+        goalsPanel.innerHTML = `
+            <div class="goals-timeline">
+                <div class="goals-header-row">
+                    <span class="goals-team-lbl">${match.homeTeam}</span>
+                    <span></span>
+                    <span class="goals-team-lbl align-right">${match.awayTeam}</span>
+                </div>
+                ${rows}
+            </div>`;
+    } else {
+        goalsPanel.innerHTML = `<div class="coming-soon-matches" style="padding:2rem 1rem;">
+            <i class="fas fa-futbol"></i>
+            <h3>Goal-by-goal timeline coming soon.</h3>
+        </div>`;
+    }
+
+    // Line-up tab
+    document.querySelector('#tab-lineup #lineup-list-view .lineup-list').innerHTML =
+        match.lineup.map(id => {
+            const player = playerData[id];
+            return `<li class="lineup-player">
+                        <button class="lineup-player-btn" onclick="showPlayerProfile('${id}')">
+                            <span class="lineup-player-name">${player.name}</span>
+                            <i class="fas fa-chevron-right lineup-chevron-right"></i>
+                        </button>
+                    </li>`;
+        }).join('');
 }
 
 function closeMatchDetail() {
@@ -251,7 +300,7 @@ const playerData = {
     jasem: { name: 'Jasem Almail', position: 'Midfielder', nationality: 'Kuwaiti', dob: 'February 19, 2014' },
     bassam: { name: 'Bassam Al Shaman', position: 'Center Midfielder', nationality: 'Saudi Arabia', dob: 'April 18, 2009' },
     faisal: { name: 'Faisal Al Mansour', position: 'Goalkeeper', nationality: 'Saudi Arabia', dob: 'September 10, 2008' },
-    fawaz: { name: 'Fawaz Al Mansour', position: 'Striker', nationality: '', dob: 'June 7, 2014' }
+    fawaz: { name: 'Fawaz Al Mansour', position: 'Striker', nationality: 'Saudi Arabia', dob: 'June 7, 2014' }
 };
 
 function showPlayerProfile(id) {
