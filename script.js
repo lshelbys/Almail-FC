@@ -131,6 +131,61 @@ const matchData = {
         venue: 'Dumankaya Street Stadium',
         goals: [],
         lineup: ['tayem', 'jasem', 'bassam', 'faisal', 'fawaz']
+    },
+    'dumankaya-2023-r1': {
+        compLabel: 'DUMANKAYA CUP — GROUP STAGE', compName: 'Dumankaya Cup', round: 'Group Stage - Round 1',
+        homeTeam: 'RIYADH UNITED', homeImg: '', homeCrest: 'RU',
+        awayTeam: 'PALESTINE GUARDS', awayImg: 'Guards.png', awayCrest: 'PG',
+        score: '5 – 0', status: 'FT', winner: 'Riyadh United WIN',
+        date: 'Sunday, 13 July 2023', kickoff: '7:40 PM',
+        venue: 'Dumankaya Street Stadium',
+        goals: [],
+        lineup: []
+    },
+    'dumankaya-2023-r2': {
+        compLabel: 'DUMANKAYA CUP — GROUP STAGE', compName: 'Dumankaya Cup', round: 'Group Stage - Round 2',
+        homeTeam: 'ALMAIL SC', homeImg: 'AlmailScLogo.png', homeCrest: 'A',
+        awayTeam: 'PALESTINE GUARDS', awayImg: 'Guards.png', awayCrest: 'PG',
+        score: '8 – 1', status: 'FT', winner: 'Almail SC WIN',
+        date: 'Sunday, 16 July 2023', kickoff: '6:30 PM',
+        venue: 'Dumankaya Street Stadium',
+        goals: [],
+        lineup: ['jasem', 'hamad', 'abulhasan']
+    },
+    'dumankaya-2023-r3': {
+        compLabel: 'DUMANKAYA CUP — GROUP STAGE', compName: 'Dumankaya Cup', round: 'Group Stage - Round 3',
+        homeTeam: 'ALMAIL SC', homeImg: 'AlmailScLogo.png', homeCrest: 'A',
+        awayTeam: 'RIYADH UNITED', awayImg: '', awayCrest: 'RU',
+        score: '5 – 2', status: 'FT', winner: 'Almail SC WIN',
+        date: 'Tuesday, 18 July 2023', kickoff: '7:40 PM',
+        venue: 'Dumankaya Street Stadium',
+        goals: [],
+        lineup: ['jasem', 'hamad', 'abulhasan', 'aalmail']
+    },
+    'friendly-2023': {
+        compLabel: 'FRIENDLY MATCH', compName: 'Friendly', round: 'Friendly Match',
+        homeTeam: 'ALMAIL SC', homeImg: 'AlmailScLogo.png', homeCrest: 'A',
+        awayTeam: 'TURKISH BULDOGLER', awayImg: '', awayCrest: 'TB',
+        score: '7 – 6', status: 'FT', winner: 'Almail SC WIN',
+        date: 'Wednesday, 16 August 2023', kickoff: '5:30 PM',
+        venue: 'Dumankaya Street Stadium',
+        goals: [
+            { time: "1'",    side: 'home', scorer: 'Jasem Almail', score: '1 — 0' },
+            { time: "6'",    side: 'home', scorer: 'Jasem Almail', score: '2 — 0' },
+            { time: "7'",    side: 'away', scorer: 'Kartal Efe', score: '2 — 1' },
+            { time: "8'",    side: 'away', scorer: 'Kartal Efe', score: '2 — 2' },
+            { time: "9'",    side: 'home', scorer: 'Faisal Al Mansour', score: '3 — 2' },
+            { time: "10'",   side: 'away', scorer: 'Jasem Almail (OG)', score: '3 — 3' },
+            { time: "10'+4", side: 'away', scorer: 'Mohammed Doruk', score: '3 — 4' },
+            { time: "11'",   side: 'home', scorer: 'Faisal Al Mansour', score: '4 — 4' },
+            { time: "14'",   side: 'home', scorer: 'Faisal Al Mansour', score: '5 — 4' },
+            { time: "17'",   side: 'away', scorer: 'Mohammed Doruk (YC)', score: '5 — 4' },
+            { time: "18'",   side: 'home', scorer: 'Jasem Almail', score: '6 — 4' },
+            { time: "19'",   side: 'home', scorer: 'Faisal Al Mansour', score: '7 — 4' },
+            { time: "20'",   side: 'away', scorer: 'Mohammed Doruk', score: '7 — 5' },
+            { time: "20'+2", side: 'away', scorer: 'Mohammed Doruk', score: '7 — 6' }
+        ],
+        lineup: ['jasem', 'faisal']
     }
 };
 
@@ -227,16 +282,23 @@ function updateModalContent(match) {
     }
 
     // Line-up tab
-    document.querySelector('#tab-lineup #lineup-list-view .lineup-list').innerHTML =
-        match.lineup.map(id => {
-            const player = playerData[id];
-            return `<li class="lineup-player">
-                        <button class="lineup-player-btn" onclick="showPlayerProfile('${id}')">
-                            <span class="lineup-player-name">${player.name}</span>
-                            <i class="fas fa-chevron-right lineup-chevron-right"></i>
-                        </button>
-                    </li>`;
-        }).join('');
+    if (match.lineup && match.lineup.length > 0) {
+        document.querySelector('#tab-lineup #lineup-list-view .lineup-list').innerHTML =
+            match.lineup.map(id => {
+                const player = playerData[id];
+                return `<li class="lineup-player">
+                            <button class="lineup-player-btn" onclick="showPlayerProfile('${id}')">
+                                <span class="lineup-player-name">${player.name}</span>
+                                <i class="fas fa-chevron-right lineup-chevron-right"></i>
+                            </button>
+                        </li>`;
+            }).join('');
+    } else {
+        document.querySelector('#tab-lineup #lineup-list-view .lineup-list').innerHTML =
+            `<div style="padding: 2rem 1rem; text-align: center; color: rgba(255,255,255,0.6);">
+                <p>Lineup information not available for this match</p>
+            </div>`;
+    }
 }
 
 function closeMatchDetail() {
@@ -296,11 +358,16 @@ if (floatMenuBtn && floatMenuPanel) {
 
 // ── Player Profile View ───────────────────────────────────
 const playerData = {
-    tayem: { name: 'Tayem Eyad', position: 'Left Winger', nationality: 'Palestinian', dob: 'March 5, 2012' },
+    tayem: { name: 'Tayem Eyad', position: 'Forward', nationality: 'Palestinian', dob: 'March 5, 2012' },
     jasem: { name: 'Jasem Almail', position: 'Midfielder', nationality: 'Kuwaiti', dob: 'February 19, 2014' },
-    bassam: { name: 'Bassam Al Shaman', position: 'Center Midfielder', nationality: 'Saudi Arabia', dob: 'April 18, 2009' },
+    bassam: { name: 'Bassam Al Shaman', position: 'Midfielder', nationality: 'Saudi Arabia', dob: 'April 18, 2009' },
     faisal: { name: 'Faisal Al Mansour', position: 'Goalkeeper', nationality: 'Saudi Arabia', dob: 'September 10, 2008' },
-    fawaz: { name: 'Fawaz Al Mansour', position: 'Striker', nationality: 'Saudi Arabia', dob: 'June 7, 2014' }
+    fawaz: { name: 'Fawaz Al Mansour', position: 'Forward', nationality: 'Saudi Arabia', dob: 'June 7, 2014' },
+    hamad: { name: 'Hamad Al Kazemi', position: 'Defender', nationality: 'Kuwaiti', dob: 'July 19, 2013' },
+    abulhasan: { name: 'Mohammed Abulhasan', position: 'Midfielder', nationality: 'Kuwaiti', dob: 'December 29, 2008' },
+    aalmail: { name: 'A.Almail', position: 'Defender', nationality: 'Kuwaiti', dob: '' },
+    kartal: { name: 'Kartal Efe', position: 'Forward', nationality: 'Turkey', dob: '' },
+    doruk: { name: 'Mohammed Doruk', position: 'Forward', nationality: 'Turkey', dob: '' }
 };
 
 function showPlayerProfile(id) {

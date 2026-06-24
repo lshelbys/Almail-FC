@@ -5,6 +5,7 @@ const translations = {
         'banner-contact': 'Contact',
 
         // Header Nav
+        'nav-home': 'HOME',
         'nav-news': 'NEWS',
         'nav-squad': 'SQUAD',
         'nav-matches': 'MATCHES',
@@ -115,6 +116,7 @@ const translations = {
         'banner-contact': 'اتصل بنا',
 
         // Header Nav
+        'nav-home': 'الرئيسية',
         'nav-news': 'أخبار',
         'nav-squad': 'الفريق',
         'nav-matches': 'المباريات',
