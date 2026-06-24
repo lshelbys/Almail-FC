@@ -99,9 +99,32 @@ document.querySelectorAll('.season-tab').forEach(tab => {
 });
 
 // ── Match Detail Modal ────────────────────────────────────
+const matchData = {
+    'dumankaya': {
+        competition: 'DUMANKAYA CUP — FINAL',
+        homeTeam: 'ALMAIL SC', homeImg: 'logo.png', homeCrest: 'A',
+        awayTeam: 'SHABAB AL HURA', awayImg: 'AlShababLogo.png', awayCrest: 'S',
+        score: '7 – 4', status: 'FT', winner: 'Almail SC WIN',
+        date: 'Friday, 8 August 2025', kickoff: '7:55 PM',
+        venue: 'Dumankaya Street Stadium',
+        lineup: ['tayem', 'jasem']
+    },
+    'dumankaya-2024': {
+        competition: 'DUMANKAYA CUP — FINAL',
+        homeTeam: 'ALMAIL SC', homeImg: 'logo.png', homeCrest: 'A',
+        awayTeam: 'PALESTINE GUARDS', awayImg: '', awayCrest: 'PG',
+        score: '6 – 4', status: 'FT', winner: 'Almail SC WIN',
+        date: 'Thursday, 25 July 2024', kickoff: '7:00 PM',
+        venue: 'Dumankaya Street Stadium',
+        lineup: ['tayem', 'jasem', 'bassam', 'faisal', 'fawaz']
+    }
+};
+
 function openMatchDetail(matchId) {
     const modal = document.getElementById('matchModal');
-    if (modal) {
+    const match = matchData[matchId];
+    if (modal && match) {
+        updateModalContent(match);
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
 
@@ -113,6 +136,58 @@ function openMatchDetail(matchId) {
             p.classList.toggle('active', i === 0);
         });
     }
+}
+
+function updateModalContent(match) {
+    // Update header
+    document.querySelector('.modal-competition').textContent = match.competition;
+    document.querySelector('.modal-score-block .modal-score').textContent = match.score;
+    document.querySelector('.modal-score-block .modal-status').textContent = match.status;
+
+    // Update teams
+    const homeTeam = document.querySelector('.modal-team:first-of-type');
+    const awayTeam = document.querySelector('.modal-team:last-of-type');
+
+    const homeImg = homeTeam.querySelector('img');
+    const homeCrest = homeTeam.querySelector('.crest-placeholder');
+    homeImg.src = match.homeImg;
+    homeCrest.textContent = match.homeCrest;
+    homeTeam.querySelector('.modal-team-name').textContent = match.homeTeam;
+
+    const awayImg = awayTeam.querySelector('img');
+    const awayCrest = awayTeam.querySelector('.crest-placeholder');
+    if (match.awayImg) {
+        awayImg.src = match.awayImg;
+        awayImg.style.display = '';
+    } else {
+        awayImg.style.display = 'none';
+    }
+    awayCrest.textContent = match.awayCrest;
+    awayTeam.querySelector('.modal-team-name').textContent = match.awayTeam;
+
+    // Update meta
+    const metaRow = document.querySelector('.modal-meta-row');
+    metaRow.innerHTML = `<span><i class="fas fa-calendar"></i> ${match.date}</span>
+                         <span><i class="fas fa-clock"></i> ${match.kickoff}</span>
+                         <span><i class="fas fa-map-marker-alt"></i> ${match.venue}</span>`;
+
+    // Update details tab
+    document.querySelector('#tab-details .detail-row:nth-child(5) .detail-value').textContent = match.kickoff;
+    document.querySelector('#tab-details .detail-row:nth-child(4) .detail-value').textContent = match.date;
+    document.querySelector('#tab-details .detail-row:nth-child(6) .detail-value').textContent = match.venue;
+    document.querySelector('#tab-details .detail-value.winner').textContent = match.winner;
+
+    // Update lineup tab
+    const lineupList = document.querySelector('#tab-lineup #lineup-list-view .lineup-list');
+    lineupList.innerHTML = match.lineup.map(id => {
+        const player = playerData[id];
+        return `<li class="lineup-player">
+                    <button class="lineup-player-btn" onclick="showPlayerProfile('${id}')">
+                        <span class="lineup-player-name">${player.name}</span>
+                        <i class="fas fa-chevron-right lineup-chevron-right"></i>
+                    </button>
+                </li>`;
+    }).join('');
 }
 
 function closeMatchDetail() {
@@ -173,7 +248,10 @@ if (floatMenuBtn && floatMenuPanel) {
 // ── Player Profile View ───────────────────────────────────
 const playerData = {
     tayem: { name: 'Tayem Eyad', position: 'Left Winger', nationality: 'Palestinian', dob: 'March 5, 2012' },
-    jasem: { name: 'Jasem Almail', position: 'Midfielder', nationality: 'Kuwaiti', dob: 'February 19, 2014' }
+    jasem: { name: 'Jasem Almail', position: 'Midfielder', nationality: 'Kuwaiti', dob: 'February 19, 2014' },
+    bassam: { name: 'Bassam Al Shaman', position: 'Center Midfielder', nationality: 'Saudi Arabia', dob: 'April 18, 2009' },
+    faisal: { name: 'Faisal Al Mansour', position: 'Goalkeeper', nationality: 'Saudi Arabia', dob: 'September 10, 2008' },
+    fawaz: { name: 'Fawaz Al Mansour', position: 'Striker', nationality: '', dob: 'June 7, 2014' }
 };
 
 function showPlayerProfile(id) {
