@@ -514,8 +514,8 @@ body.rtl-mode .back-to-top {
 .away-team { align-items: center; }
 
 .match-team-crest {
-    width: 64px;
-    height: 64px;
+    width: 80px;
+    height: 80px;
     background: transparent;
     border-radius: 4px;
     display: flex;
@@ -1395,7 +1395,7 @@ body.rtl-mode .back-to-top {
     .hero-btn { padding: 0.65rem 1.4rem; font-size: 0.8rem; }
 
     .match-app-header { padding: 0.6rem 1rem; }
-    .match-team-crest { width: 48px; height: 48px; }
+    .match-team-crest { width: 60px; height: 60px; }
     .match-team-name { font-size: 0.8rem; }
 
     .footer-cols { grid-template-columns: 1fr; }
