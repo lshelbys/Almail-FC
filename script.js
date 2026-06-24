@@ -102,7 +102,7 @@ document.querySelectorAll('.season-tab').forEach(tab => {
 const matchData = {
     'dumankaya': {
         compLabel: 'DUMANKAYA CUP — FINAL', compName: 'Dumankaya Cup', round: 'Final',
-        homeTeam: 'ALMAIL SC', homeImg: 'logo.png', homeCrest: 'A',
+        homeTeam: 'ALMAIL SC', homeImg: 'AlmailScLogo.png', homeCrest: 'A',
         awayTeam: 'SHABAB AL HURA', awayImg: 'AlShababLogo.png', awayCrest: 'S',
         score: '7 – 4', status: 'FT', winner: 'Almail SC WIN',
         date: 'Friday, 8 August 2025', kickoff: '7:55 PM',
@@ -124,8 +124,8 @@ const matchData = {
     },
     'dumankaya-2024': {
         compLabel: 'DUMANKAYA CUP — FINAL', compName: 'Dumankaya Cup', round: 'Final',
-        homeTeam: 'ALMAIL SC', homeImg: 'logo.png', homeCrest: 'A',
-        awayTeam: 'PALESTINE GUARDS', awayImg: '', awayCrest: 'PG',
+        homeTeam: 'ALMAIL SC', homeImg: 'AlmailScLogo.png', homeCrest: 'A',
+        awayTeam: 'PALESTINE GUARDS', awayImg: 'Guards.png', awayCrest: 'PG',
         score: '6 – 4', status: 'FT', winner: 'Almail SC WIN',
         date: 'Thursday, 25 July 2024', kickoff: '7:00 PM',
         venue: 'Dumankaya Street Stadium',
