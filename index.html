@@ -128,9 +128,36 @@
 
             <!-- 2024 Season -->
             <div class="season-panel" id="season-2024">
-                <div class="coming-soon-matches">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h3><span data-i18n="season-records">Match records for the</span> 2024 <span data-i18n="season-coming">season are coming soon.</span></h3>
+                <div class="match-app-card" onclick="openMatchDetail('dumankaya-2024')">
+                    <div class="match-app-header">
+                        <span class="match-competition-badge" data-i18n="competition-dumankaya">DUMANKAYA CUP</span>
+                        <span class="match-type-badge" data-i18n="match-final">FINAL</span>
+                    </div>
+                    <div class="match-app-body">
+                        <div class="match-app-team home-team">
+                            <div class="match-team-crest">
+                                <img src="logo.png" alt="ASC" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <span class="crest-placeholder">A</span>
+                            </div>
+                            <span class="match-team-name" data-i18n="team-almail">ALMAIL SC</span>
+                        </div>
+                        <div class="match-app-score-block">
+                            <div class="match-app-score">6 <span class="score-sep">–</span> 4</div>
+                            <div class="match-app-status ft" data-i18n="ft">FT</div>
+                        </div>
+                        <div class="match-app-team away-team">
+                            <div class="match-team-crest">
+                                <span class="crest-placeholder">PG</span>
+                            </div>
+                            <span class="match-team-name">PALESTINE GUARDS</span>
+                        </div>
+                    </div>
+                    <div class="match-app-footer">
+                        <span><i class="fas fa-calendar"></i> Thu 25 Jul 2024</span>
+                        <span><i class="fas fa-clock"></i> 7:00 PM</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Dumankaya Street Stadium</span>
+                        <span class="match-details-link" data-i18n="match-details">MATCH DETAILS <i class="fas fa-chevron-right"></i></span>
+                    </div>
                 </div>
             </div>
 
