@@ -179,7 +179,7 @@ const matchData = {
             { time: "10'+4", side: 'away', scorer: 'Mohammed Doruk', score: '3 — 4' },
             { time: "11'",   side: 'home', scorer: 'Faisal Al Mansour', score: '4 — 4' },
             { time: "14'",   side: 'home', scorer: 'Faisal Al Mansour', score: '5 — 4' },
-            { time: "17'",   side: 'away', scorer: 'Mohammed Doruk (YC)', score: '5 — 4' },
+            { time: "17'",   side: 'away', scorer: 'Mohammed Doruk', score: '5 — 4', isCard: true },
             { time: "18'",   side: 'home', scorer: 'Jasem Almail', score: '6 — 4' },
             { time: "19'",   side: 'home', scorer: 'Faisal Al Mansour', score: '7 — 4' },
             { time: "20'",   side: 'away', scorer: 'Mohammed Doruk', score: '7 — 5' },
@@ -255,7 +255,8 @@ function updateModalContent(match) {
     const goalsPanel = document.getElementById('tab-goals');
     if (match.goals && match.goals.length) {
         const rows = match.goals.map(g => {
-            const cell = `<i class="fas fa-futbol goal-ball"></i>
+            const icon = g.isCard ? '<i class="fas fa-square" style="color:#FFD700;"></i>' : '<i class="fas fa-futbol goal-ball"></i>';
+            const cell = `${icon}
                           <span class="goal-score-pill">${g.score}</span>
                           <span class="goal-scorer">${g.scorer}</span>`;
             return `<div class="goal-row">
