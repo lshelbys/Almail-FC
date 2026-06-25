@@ -175,7 +175,7 @@ const matchData = {
             { time: "7'",    side: 'away', scorer: 'Kartal Efe', score: '2 — 1' },
             { time: "8'",    side: 'away', scorer: 'Kartal Efe', score: '2 — 2' },
             { time: "9'",    side: 'home', scorer: 'Faisal Al Mansour', score: '3 — 2' },
-            { time: "10'",   side: 'away', scorer: 'Jasem Almail (OG)', score: '3 — 3' },
+            { time: "10'",   side: 'away', scorer: 'Jasem Almail', score: '3 — 3', isOwnGoal: true },
             { time: "10'+4", side: 'away', scorer: 'Mohammed Doruk', score: '3 — 4' },
             { time: "11'",   side: 'home', scorer: 'Faisal Al Mansour', score: '4 — 4' },
             { time: "14'",   side: 'home', scorer: 'Faisal Al Mansour', score: '5 — 4' },
@@ -255,7 +255,7 @@ function updateModalContent(match) {
     const goalsPanel = document.getElementById('tab-goals');
     if (match.goals && match.goals.length) {
         const rows = match.goals.map(g => {
-            const icon = g.isCard ? '<i class="fas fa-square" style="color:#FFD700;"></i>' : '<i class="fas fa-futbol goal-ball"></i>';
+            const icon = g.isCard ? '<i class="fas fa-square" style="color:#FFD700;"></i>' : g.isOwnGoal ? '<i class="fas fa-futbol" style="color:#FF4444;"></i>' : '<i class="fas fa-futbol goal-ball"></i>';
             const cell = `${icon}
                           <span class="goal-score-pill">${g.score}</span>
                           <span class="goal-scorer">${g.scorer}</span>`;
